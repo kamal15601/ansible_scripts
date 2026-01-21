@@ -1,0 +1,26 @@
+
+services:
+  target1:
+    image: rhel9-ubi:latest
+    container_name: target1
+    hostname: target1
+    ports:
+      - "2221:22"
+    restart: unless-stopped
+
+  target2:
+    image: rhel9-ubi:latest
+    container_name: target2
+    hostname: target2
+    ports:
+      - "2222:22"
+    restart: unless-stopped
+  
+  ubuntu-target:
+    image: ubuntu-ansible-target:latest
+    container_name: ubuntu-target
+    hostname: ubuntu-target
+    ports:
+      - "2223:22"
+    restart: unless-stopped
+

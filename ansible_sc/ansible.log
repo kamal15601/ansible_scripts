@@ -1,0 +1,681 @@
+2025-10-15 10:05:39,112 p=69875 u=hhgl95760 n=ansible INFO| PLAY [node01] ******************************************************************
+2025-10-15 10:05:39,125 p=69875 u=hhgl95760 n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-15 10:05:49,083 p=69875 u=hhgl95760 n=ansible WARNING| [WARNING]: Platform linux on host node01 is using the discovered Python
+interpreter at /usr/bin/python3.12, but future installation of another Python
+interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-10-15 10:05:49,084 p=69875 u=hhgl95760 n=ansible INFO| ok: [node01]
+2025-10-15 10:05:49,092 p=69875 u=hhgl95760 n=ansible INFO| TASK [Run date command and capture output] *************************************
+2025-10-15 10:05:54,860 p=69875 u=hhgl95760 n=ansible INFO| ok: [node01]
+2025-10-15 10:05:54,863 p=69875 u=hhgl95760 n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-15 10:05:54,863 p=69875 u=hhgl95760 n=ansible INFO| node01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-22 06:48:06,033 p=4308 u=hhgl95760 n=ansible INFO| PLAY [node01] ************************************************************************************************************************************
+2025-10-22 06:48:06,048 p=4308 u=hhgl95760 n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-10-22 06:48:17,066 p=4308 u=hhgl95760 n=ansible WARNING| [WARNING]: Platform linux on host node01 is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another
+Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-10-22 06:48:17,067 p=4308 u=hhgl95760 n=ansible INFO| ok: [node01]
+2025-10-22 06:48:17,078 p=4308 u=hhgl95760 n=ansible INFO| TASK [Run date command and capture output] *******************************************************************************************************
+2025-10-22 06:48:23,031 p=4308 u=hhgl95760 n=ansible INFO| ok: [node01]
+2025-10-22 06:48:23,035 p=4308 u=hhgl95760 n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-10-22 06:48:23,035 p=4308 u=hhgl95760 n=ansible INFO| node01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-22 07:28:26,474 p=5407 u=hhgl95760 n=ansible INFO| PLAY [node01] ******************************************************************
+2025-10-22 07:28:26,507 p=5407 u=hhgl95760 n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-22 07:28:37,225 p=5407 u=hhgl95760 n=ansible WARNING| [WARNING]: Platform linux on host node01 is using the discovered Python
+interpreter at /usr/bin/python3.12, but future installation of another Python
+interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-10-22 07:28:37,226 p=5407 u=hhgl95760 n=ansible INFO| ok: [node01]
+2025-10-22 07:28:37,238 p=5407 u=hhgl95760 n=ansible INFO| TASK [Ping] ********************************************************************
+2025-10-22 07:28:42,321 p=5407 u=hhgl95760 n=ansible INFO| ok: [node01]
+2025-10-22 07:28:42,325 p=5407 u=hhgl95760 n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-22 07:28:42,327 p=5407 u=hhgl95760 n=ansible INFO| node01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-09 13:28:27,485 p=8998 u=hhgl95760 n=ansible ERROR| [ERROR]: Task failed: Failed to connect to the host via ssh: Host key verification failed.
+Origin: <adhoc 'command' task>
+
+{'action': 'command', 'args': {'_raw_params': 'uptime'}, 'timeout': 0, 'async_val': 0, 'poll': 15}
+
+
+2026-01-09 13:28:27,488 p=8998 u=hhgl95760 n=ansible INFO| node01 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Task failed: Failed to connect to the host via ssh: Host key verification failed.",
+    "unreachable": true
+}
+2026-01-09 13:32:11,094 p=9571 u=hhgl95760 n=ansible ERROR| [ERROR]: Task failed: Failed to connect to the host via ssh: Host key verification failed.
+Origin: <adhoc 'command' task>
+
+{'action': 'command', 'args': {'_raw_params': 'uptime'}, 'timeout': 0, 'async_val': 0, 'poll': 15}
+
+
+2026-01-09 13:32:11,097 p=9571 u=hhgl95760 n=ansible INFO| node01 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Task failed: Failed to connect to the host via ssh: Host key verification failed.",
+    "unreachable": true
+}
+2026-01-09 13:35:16,265 p=10066 u=hhgl95760 n=ansible ERROR| [ERROR]: Task failed: Failed to connect to the host via ssh: Host key verification failed.
+Origin: <adhoc 'command' task>
+
+{'action': 'command', 'args': {'_raw_params': 'uptime'}, 'timeout': 0, 'async_val': 0, 'poll': 15}
+
+
+2026-01-09 13:35:16,266 p=10066 u=hhgl95760 n=ansible INFO| node01 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Task failed: Failed to connect to the host via ssh: Host key verification failed.",
+    "unreachable": true
+}
+2026-01-09 13:40:10,604 p=10853 u=hhgl95760 n=ansible INFO| PLAY [node01] ******************************************************************
+2026-01-09 13:40:10,637 p=10853 u=hhgl95760 n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-01-09 13:40:11,582 p=10853 u=hhgl95760 n=ansible ERROR| [ERROR]: Task failed: Failed to connect to the host via ssh: Host key verification failed.
+
+2026-01-09 13:40:11,584 p=10853 u=hhgl95760 n=ansible INFO| fatal: [node01]: UNREACHABLE! => {"changed": false, "msg": "Task failed: Failed to connect to the host via ssh: Host key verification failed.", "unreachable": true}
+2026-01-09 13:40:11,589 p=10853 u=hhgl95760 n=ansible INFO| PLAY RECAP *********************************************************************
+2026-01-09 13:40:11,589 p=10853 u=hhgl95760 n=ansible INFO| node01                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-09 13:41:31,353 p=11070 u=hhgl95760 n=ansible INFO| PLAY [node01] ******************************************************************
+2026-01-09 13:41:31,369 p=11070 u=hhgl95760 n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2026-01-09 13:41:43,326 p=11070 u=hhgl95760 n=ansible WARNING| [WARNING]: Host 'node01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-01-09 13:41:43,326 p=11070 u=hhgl95760 n=ansible INFO| ok: [node01]
+2026-01-09 13:41:43,336 p=11070 u=hhgl95760 n=ansible INFO| TASK [Ping] ********************************************************************
+2026-01-09 13:41:50,057 p=11070 u=hhgl95760 n=ansible INFO| ok: [node01]
+2026-01-09 13:41:50,059 p=11070 u=hhgl95760 n=ansible INFO| PLAY RECAP *********************************************************************
+2026-01-09 13:41:50,061 p=11070 u=hhgl95760 n=ansible INFO| node01                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-09 13:48:20,675 p=12114 u=hhgl95760 n=ansible WARNING| [WARNING]: Host 'node01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-01-09 13:48:20,676 p=12114 u=hhgl95760 n=ansible INFO| node01 | CHANGED | rc=0 >>
+ 13:48:20 up 20:11,  2 users,  load average: 0.00, 0.00, 0.00
+
+2026-01-09 14:06:59,228 p=14913 u=hhgl95760 n=ansible WARNING| [WARNING]: Host 'node01' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-01-09 14:06:59,228 p=14913 u=hhgl95760 n=ansible INFO| node01 | CHANGED | rc=0 >>
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/xvda3       20G  1.8G   18G  10% /
+devtmpfs        4.0M     0  4.0M   0% /dev
+tmpfs           476M     0  476M   0% /dev/shm
+tmpfs           191M  4.5M  186M   3% /run
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+/dev/xvda2      200M  8.4M  192M   5% /boot/efi
+tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/serial-getty@ttyS0.service
+tmpfs            96M  4.0K   96M   1% /run/user/1000
+
+2026-01-09 14:30:31,770 p=18569 u=hhgl95760 n=ansible INFO| node01 | CHANGED => {
+    "changed": true,
+    "rc": 0,
+    "stderr": "Shared connection to 98.84.100.122 closed.\r\n",
+    "stderr_lines": [
+        "Shared connection to 98.84.100.122 closed."
+    ],
+    "stdout": "Filesystem      Size  Used Avail Use% Mounted on\r\n/dev/xvda3       20G  1.8G   18G  10% /\r\ndevtmpfs        4.0M     0  4.0M   0% /dev\r\ntmpfs           476M     0  476M   0% /dev/shm\r\ntmpfs           191M  4.5M  186M   3% /run\r\ntmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service\r\n/dev/xvda2      200M  8.4M  192M   5% /boot/efi\r\ntmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service\r\ntmpfs           1.0M     0  1.0M   0% /run/credentials/serial-getty@ttyS0.service\r\ntmpfs            96M  4.0K   96M   1% /run/user/1000\r\n/home/ec2-user/.ansible/tmp/ansible-tmp-1767969027.4623027-18573-72361828455021/ex.sh: line 2: UID: command not found\r\n1\r\nscript is executed\r\n date is Fri Jan  9 14:30:30 UTC 2026\r\n",
+    "stdout_lines": [
+        "Filesystem      Size  Used Avail Use% Mounted on",
+        "/dev/xvda3       20G  1.8G   18G  10% /",
+        "devtmpfs        4.0M     0  4.0M   0% /dev",
+        "tmpfs           476M     0  476M   0% /dev/shm",
+        "tmpfs           191M  4.5M  186M   3% /run",
+        "tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service",
+        "/dev/xvda2      200M  8.4M  192M   5% /boot/efi",
+        "tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service",
+        "tmpfs           1.0M     0  1.0M   0% /run/credentials/serial-getty@ttyS0.service",
+        "tmpfs            96M  4.0K   96M   1% /run/user/1000",
+        "/home/ec2-user/.ansible/tmp/ansible-tmp-1767969027.4623027-18573-72361828455021/ex.sh: line 2: UID: command not found",
+        "1",
+        "script is executed",
+        " date is Fri Jan  9 14:30:30 UTC 2026"
+    ]
+}
+2026-01-13 09:42:48,851 p=40725 u=ec2-user n=ansible | target1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-13 09:43:51,341 p=41180 u=ec2-user n=ansible | target2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-13 09:44:08,227 p=41392 u=ec2-user n=ansible | target2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-13 09:44:14,606 p=41557 u=ec2-user n=ansible | target1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-13 09:44:36,231 p=41787 u=ec2-user n=ansible | target2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-13 09:44:36,238 p=41787 u=ec2-user n=ansible | target1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-13 09:47:07,416 p=42799 u=ec2-user n=ansible | target1 | FAILED | rc=2 >>
+[Errno 2] No such file or directory: b'uptime'
+
+2026-01-13 09:47:07,429 p=42799 u=ec2-user n=ansible | target2 | FAILED | rc=2 >>
+[Errno 2] No such file or directory: b'uptime'
+
+2026-01-13 09:47:43,003 p=43184 u=ec2-user n=ansible | target2 | CHANGED | rc=0 >>
+
+
+2026-01-13 09:47:43,017 p=43184 u=ec2-user n=ansible | target1 | CHANGED | rc=0 >>
+
+
+2026-01-13 09:47:56,629 p=43502 u=ec2-user n=ansible | target2 | CHANGED | rc=0 >>
+
+
+2026-01-13 09:47:56,651 p=43502 u=ec2-user n=ansible | target1 | CHANGED | rc=0 >>
+
+
+2026-01-13 09:48:01,280 p=43751 u=ec2-user n=ansible | target1 | CHANGED | rc=0 >>
+txt.sh
+
+2026-01-13 09:48:01,282 p=43751 u=ec2-user n=ansible | target2 | CHANGED | rc=0 >>
+txt.sh
+
+2026-01-13 09:48:08,206 p=44024 u=ec2-user n=ansible | target2 | CHANGED | rc=0 >>
+txt.sh
+
+2026-01-13 09:48:08,241 p=44024 u=ec2-user n=ansible | target1 | CHANGED | rc=0 >>
+txt.sh
+
+2026-01-13 09:48:16,351 p=44304 u=ec2-user n=ansible | target1 | CHANGED | rc=0 >>
+txt.sh
+
+2026-01-13 09:48:16,386 p=44304 u=ec2-user n=ansible | target2 | CHANGED | rc=0 >>
+txt.sh
+
+2026-01-13 09:48:29,331 p=44611 u=ec2-user n=ansible | target1 | FAILED | rc=2 >>
+[Errno 2] No such file or directory: b'uptime'
+
+2026-01-13 09:48:29,376 p=44611 u=ec2-user n=ansible | target2 | FAILED | rc=2 >>
+[Errno 2] No such file or directory: b'uptime'
+
+2026-01-13 09:48:55,486 p=44967 u=ec2-user n=ansible | target1 | FAILED | rc=1 >>
+Not root, Subscription Management repositories not updatedError: This command has to be run with superuser privileges (under the root user on most systems).non-zero return code
+
+2026-01-13 09:48:55,488 p=44967 u=ec2-user n=ansible | target2 | FAILED | rc=1 >>
+Not root, Subscription Management repositories not updatedError: This command has to be run with superuser privileges (under the root user on most systems).non-zero return code
+
+2026-01-13 09:49:11,373 p=45285 u=ec2-user n=ansible | target2 | CHANGED | rc=0 >>
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Last metadata expiration check: 22:59:19 ago on Mon Jan 12 10:49:52 2026.
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+2026-01-13 09:49:12,342 p=45285 u=ec2-user n=ansible | target1 | CHANGED | rc=0 >>
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Red Hat Universal Base Image 9 (RPMs) - BaseOS  4.4 MB/s | 437 kB     00:00    
+Red Hat Universal Base Image 9 (RPMs) - AppStre  21 MB/s | 2.2 MB     00:00    
+Red Hat Universal Base Image 9 (RPMs) - CodeRea 2.1 MB/s | 175 kB     00:00    
+Dependencies resolved.
+Nothing to do.
+Complete!
+
+2026-01-13 09:57:56,325 p=47648 u=ec2-user n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: node01
+
+2026-01-13 09:57:56,326 p=47648 u=ec2-user n=ansible | PLAY [node01] *****************************************************************************
+2026-01-13 09:57:56,326 p=47648 u=ec2-user n=ansible | skipping: no hosts matched
+2026-01-13 09:57:56,326 p=47648 u=ec2-user n=ansible | PLAY RECAP ********************************************************************************
+2026-01-13 09:58:17,054 p=47742 u=ec2-user n=ansible | PLAY [target1] ****************************************************************************
+2026-01-13 09:58:17,062 p=47742 u=ec2-user n=ansible | TASK [Gathering Facts] ********************************************************************
+2026-01-13 09:58:18,591 p=47742 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 09:58:18,596 p=47742 u=ec2-user n=ansible | TASK [Ping] *******************************************************************************
+2026-01-13 09:58:19,077 p=47742 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 09:58:19,078 p=47742 u=ec2-user n=ansible | PLAY RECAP ********************************************************************************
+2026-01-13 09:58:19,078 p=47742 u=ec2-user n=ansible | target1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-13 09:59:08,491 p=48192 u=ec2-user n=ansible | PLAY [target1] ****************************************************************************
+2026-01-13 09:59:08,499 p=48192 u=ec2-user n=ansible | TASK [Gathering Facts] ********************************************************************
+2026-01-13 09:59:09,687 p=48192 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 09:59:09,691 p=48192 u=ec2-user n=ansible | TASK [update] *****************************************************************************
+2026-01-13 09:59:10,621 p=48192 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": true, "cmd": ["dnf", "install"], "delta": "0:00:00.406988", "end": "2026-01-13 09:59:10.570343", "msg": "non-zero return code", "rc": 2, "start": "2026-01-13 09:59:10.163355", "stderr": "usage: dnf install [-c CONFIG_FILE] [-q] [-v] [--version] [--installroot PATH]\n                   [--nodocs] [--noplugins] [--enableplugin PLUGIN]\n                   [--disableplugin PLUGIN] [--releasever RELEASEVER]\n                   [--releasever-major RELEASEVER_MAJOR]\n                   [--releasever-minor RELEASEVER_MINOR] [--setopt SETOPTS]\n                   [--skip-broken] [-h] [--allowerasing] [-b | --nobest] [-C]\n                   [-R MINUTES] [-d DEBUG_LEVEL] [--debugsolver]\n                   [--showduplicates] [-e ERRORLEVEL] [--obsoletes]\n                   [--rpmverbosity DEBUG_LEVEL_NAME] [-y] [--assumeno]\n                   [--enablerepo REPO] [--disablerepo REPO | --repo REPO]\n                   [--enable | --disable] [-x PACKAGE]\n                   [--disableexcludes {all, main, REPOID}]\n                   [--repofrompath REPO,PATH] [--noautoremove] [--nogpgcheck]\n                   [--color COLOR] [--refresh] [-4] [-6] [--destdir DESTDIR]\n                   [--downloadonly] [--transient] [--comment COMMENT]\n                   [--bugfix] [--enhancement] [--newpackage] [--security]\n                   [--advisory ADVISORY] [--bz BUGZILLA] [--cve CVES]\n                   [--sec-severity {Critical,Important,Moderate,Low}]\n                   [--forcearch ARCH]\n                   PACKAGE [PACKAGE ...]\ndnf install: error: the following arguments are required: PACKAGE", "stderr_lines": ["usage: dnf install [-c CONFIG_FILE] [-q] [-v] [--version] [--installroot PATH]", "                   [--nodocs] [--noplugins] [--enableplugin PLUGIN]", "                   [--disableplugin PLUGIN] [--releasever RELEASEVER]", "                   [--releasever-major RELEASEVER_MAJOR]", "                   [--releasever-minor RELEASEVER_MINOR] [--setopt SETOPTS]", "                   [--skip-broken] [-h] [--allowerasing] [-b | --nobest] [-C]", "                   [-R MINUTES] [-d DEBUG_LEVEL] [--debugsolver]", "                   [--showduplicates] [-e ERRORLEVEL] [--obsoletes]", "                   [--rpmverbosity DEBUG_LEVEL_NAME] [-y] [--assumeno]", "                   [--enablerepo REPO] [--disablerepo REPO | --repo REPO]", "                   [--enable | --disable] [-x PACKAGE]", "                   [--disableexcludes {all, main, REPOID}]", "                   [--repofrompath REPO,PATH] [--noautoremove] [--nogpgcheck]", "                   [--color COLOR] [--refresh] [-4] [-6] [--destdir DESTDIR]", "                   [--downloadonly] [--transient] [--comment COMMENT]", "                   [--bugfix] [--enhancement] [--newpackage] [--security]", "                   [--advisory ADVISORY] [--bz BUGZILLA] [--cve CVES]", "                   [--sec-severity {Critical,Important,Moderate,Low}]", "                   [--forcearch ARCH]", "                   PACKAGE [PACKAGE ...]", "dnf install: error: the following arguments are required: PACKAGE"], "stdout": "Updating Subscription Management repositories.\nUnable to read consumer identity\n\nThis system is not registered with an entitlement server. You can use subscription-manager to register.", "stdout_lines": ["Updating Subscription Management repositories.", "Unable to read consumer identity", "", "This system is not registered with an entitlement server. You can use subscription-manager to register."]}
+2026-01-13 09:59:10,622 p=48192 u=ec2-user n=ansible | PLAY RECAP ********************************************************************************
+2026-01-13 09:59:10,622 p=48192 u=ec2-user n=ansible | target1                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-13 09:59:45,679 p=48553 u=ec2-user n=ansible | PLAY [target1] ****************************************************************************
+2026-01-13 09:59:45,686 p=48553 u=ec2-user n=ansible | TASK [Gathering Facts] ********************************************************************
+2026-01-13 09:59:46,832 p=48553 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 09:59:46,837 p=48553 u=ec2-user n=ansible | TASK [update] *****************************************************************************
+2026-01-13 09:59:47,349 p=48553 u=ec2-user n=ansible | changed: [target1]
+2026-01-13 09:59:47,351 p=48553 u=ec2-user n=ansible | PLAY RECAP ********************************************************************************
+2026-01-13 09:59:47,351 p=48553 u=ec2-user n=ansible | target1                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-13 10:00:38,608 p=48954 u=ec2-user n=ansible | PLAY [target1] ****************************************************************************
+2026-01-13 10:00:38,615 p=48954 u=ec2-user n=ansible | TASK [Gathering Facts] ********************************************************************
+2026-01-13 10:00:39,759 p=48954 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 10:00:39,764 p=48954 u=ec2-user n=ansible | TASK [update] *****************************************************************************
+2026-01-13 10:00:40,279 p=48954 u=ec2-user n=ansible | changed: [target1]
+2026-01-13 10:00:40,282 p=48954 u=ec2-user n=ansible | TASK [list] *******************************************************************************
+2026-01-13 10:00:40,664 p=48954 u=ec2-user n=ansible | changed: [target1]
+2026-01-13 10:00:40,666 p=48954 u=ec2-user n=ansible | PLAY RECAP ********************************************************************************
+2026-01-13 10:00:40,667 p=48954 u=ec2-user n=ansible | target1                    : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-13 10:02:11,960 p=49593 u=ec2-user n=ansible | target1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "msg": "Nothing to do",
+    "rc": 0,
+    "results": []
+}
+2026-01-13 10:02:11,977 p=49593 u=ec2-user n=ansible | target2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "msg": "Nothing to do",
+    "rc": 0,
+    "results": []
+}
+2026-01-13 10:18:49,777 p=6766 u=ec2-user n=ansible | PLAY [target1] **************************************************************************************
+2026-01-13 10:18:49,795 p=6766 u=ec2-user n=ansible | TASK [Gathering Facts] ******************************************************************************
+2026-01-13 10:18:51,786 p=6766 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 10:18:51,791 p=6766 u=ec2-user n=ansible | TASK [check kernel version] *************************************************************************
+2026-01-13 10:18:52,467 p=6766 u=ec2-user n=ansible | changed: [target1]
+2026-01-13 10:18:52,472 p=6766 u=ec2-user n=ansible | TASK [print kernel version] *************************************************************************
+2026-01-13 10:18:52,487 p=6766 u=ec2-user n=ansible | ok: [target1] => {
+    "msg": "kernel version is 6.12.0-124.21.1.el10_1.aarch64"
+}
+2026-01-13 10:18:52,488 p=6766 u=ec2-user n=ansible | PLAY RECAP ******************************************************************************************
+2026-01-13 10:18:52,488 p=6766 u=ec2-user n=ansible | target1                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-13 10:38:59,893 p=12256 u=ec2-user n=ansible | PLAY [target1] **************************************************************************************
+2026-01-13 10:38:59,901 p=12256 u=ec2-user n=ansible | TASK [Gathering Facts] ******************************************************************************
+2026-01-13 10:39:01,566 p=12256 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 10:39:01,570 p=12256 u=ec2-user n=ansible | TASK [check kernel version] *************************************************************************
+2026-01-13 10:39:02,192 p=12256 u=ec2-user n=ansible | changed: [target1]
+2026-01-13 10:39:02,197 p=12256 u=ec2-user n=ansible | TASK [print kernel version] *************************************************************************
+2026-01-13 10:39:02,212 p=12256 u=ec2-user n=ansible | ok: [target1] => {
+    "msg": "kernel version is 6.12.0-124.21.1.el10_1.aarch64"
+}
+2026-01-13 10:39:02,218 p=12256 u=ec2-user n=ansible | TASK [register redhat subscription] *****************************************************************
+2026-01-13 10:39:02,231 p=12256 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'username' is undefined. 'username' is undefined\n\nThe error appears to be in '/home/ec2-user/scripts/ansible_sc/playbook.yaml': line 11, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n    - name: register redhat subscription\n      ^ here\n"}
+2026-01-13 10:39:02,232 p=12256 u=ec2-user n=ansible | PLAY RECAP ******************************************************************************************
+2026-01-13 10:39:02,232 p=12256 u=ec2-user n=ansible | target1                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-13 10:40:09,641 p=12776 u=ec2-user n=ansible | PLAY [target1] **************************************************************************************
+2026-01-13 10:40:09,657 p=12776 u=ec2-user n=ansible | TASK [Gathering Facts] ******************************************************************************
+2026-01-13 10:40:11,057 p=12776 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 10:40:11,071 p=12776 u=ec2-user n=ansible | TASK [check kernel version] *************************************************************************
+2026-01-13 10:40:11,640 p=12776 u=ec2-user n=ansible | changed: [target1]
+2026-01-13 10:40:11,654 p=12776 u=ec2-user n=ansible | TASK [print kernel version] *************************************************************************
+2026-01-13 10:40:11,669 p=12776 u=ec2-user n=ansible | ok: [target1] => {
+    "msg": "kernel version is 6.12.0-124.21.1.el10_1.aarch64"
+}
+2026-01-13 10:40:11,683 p=12776 u=ec2-user n=ansible | TASK [register redhat subscription] *****************************************************************
+2026-01-13 10:40:18,031 p=12776 u=ec2-user n=ansible | changed: [target1]
+2026-01-13 10:40:18,033 p=12776 u=ec2-user n=ansible | PLAY RECAP ******************************************************************************************
+2026-01-13 10:40:18,033 p=12776 u=ec2-user n=ansible | target1                    : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-13 10:42:35,065 p=14051 u=ec2-user n=ansible | PLAY [target1] **************************************************************************************
+2026-01-13 10:42:35,081 p=14051 u=ec2-user n=ansible | TASK [Gathering Facts] ******************************************************************************
+2026-01-13 10:42:36,413 p=14051 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 10:42:36,426 p=14051 u=ec2-user n=ansible | TASK [check kernel version] *************************************************************************
+2026-01-13 10:42:36,963 p=14051 u=ec2-user n=ansible | changed: [target1]
+2026-01-13 10:42:36,978 p=14051 u=ec2-user n=ansible | TASK [print kernel version] *************************************************************************
+2026-01-13 10:42:36,992 p=14051 u=ec2-user n=ansible | ok: [target1] => {
+    "msg": "kernel version is 6.12.0-124.21.1.el10_1.aarch64"
+}
+2026-01-13 10:42:37,007 p=14051 u=ec2-user n=ansible | TASK [register redhat subscription] *****************************************************************
+2026-01-13 10:42:37,614 p=14051 u=ec2-user n=ansible | changed: [target1]
+2026-01-13 10:42:37,629 p=14051 u=ec2-user n=ansible | TASK [print output] *********************************************************************************
+2026-01-13 10:42:37,644 p=14051 u=ec2-user n=ansible | ok: [target1] => {
+    "msg": "\r\n this script is used to register redhat subscription\r\nThis system is already registered. Use --force to override\r\n the exit status of last command is 64 \r\n"
+}
+2026-01-13 10:42:37,646 p=14051 u=ec2-user n=ansible | PLAY RECAP ******************************************************************************************
+2026-01-13 10:42:37,646 p=14051 u=ec2-user n=ansible | target1                    : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-13 10:43:16,874 p=14538 u=ec2-user n=ansible | PLAY [target2] **************************************************************************************
+2026-01-13 10:43:16,890 p=14538 u=ec2-user n=ansible | TASK [Gathering Facts] ******************************************************************************
+2026-01-13 10:43:18,266 p=14538 u=ec2-user n=ansible | ok: [target2]
+2026-01-13 10:43:18,279 p=14538 u=ec2-user n=ansible | TASK [check kernel version] *************************************************************************
+2026-01-13 10:43:18,813 p=14538 u=ec2-user n=ansible | changed: [target2]
+2026-01-13 10:43:18,826 p=14538 u=ec2-user n=ansible | TASK [print kernel version] *************************************************************************
+2026-01-13 10:43:18,841 p=14538 u=ec2-user n=ansible | ok: [target2] => {
+    "msg": "kernel version is 6.12.0-124.21.1.el10_1.aarch64"
+}
+2026-01-13 10:43:18,857 p=14538 u=ec2-user n=ansible | TASK [register redhat subscription] *****************************************************************
+2026-01-13 10:43:25,880 p=14538 u=ec2-user n=ansible | changed: [target2]
+2026-01-13 10:43:25,898 p=14538 u=ec2-user n=ansible | TASK [print output] *********************************************************************************
+2026-01-13 10:43:25,919 p=14538 u=ec2-user n=ansible | ok: [target2] => {
+    "msg": " this script is used to register redhat subscription\r\nRegistering to: subscription.rhsm.redhat.com:443/subscription\r\n\u001b[?25l| Fetching organizations\r\u001b[0K\r/ Fetching organizations\r\u001b[0K\r- Fetching organizations\r\u001b[0K\r\\ Fetching organizations\r\u001b[0K\r| Fetching organizations\r\u001b[0K\r/ Fetching organizations\r\u001b[0K\r- Fetching organizations\r\u001b[?25h\u001b[0K\r\u001b[?25l| Fetching supported resources\r\u001b[?25h\u001b[0K\r\u001b[?25l| Registering system\r\u001b[0K\r/ Registering system\r\u001b[0K\r- Registering system\r\u001b[0K\r\\ Registering system\r\u001b[0K\r| Registering system\r\u001b[0K\r/ Registering system\r\u001b[0K\r- Registering system\r\u001b[0K\r\\ Registering system\r\u001b[0K\r| Registering system\r\u001b[0K\r/ Registering system\r\u001b[0K\r- Registering system\r\u001b[0K\r\\ Registering system\r\u001b[0K\r| Registering system\r\u001b[0K\r/ Registering system\r\u001b[0K\r- Registering system\r\u001b[0K\r\\ Registering system\r\u001b[0K\r| Registering system\r\u001b[0K\r/ Registering system\r\u001b[0K\r- Registering system\r\u001b[?25h\u001b[0K\rThe system has been registered with ID: a2144b9c-e066-417c-8b50-a92fa6014df1\r\nThe registered system name is: target2\r\n\u001b[?25l| Checking server status\r\u001b[?25h\u001b[0K\r\u001b[?25l| Checking server status\r\u001b[?25h\u001b[0K\r\u001b[?25l| Fetching certificate serial numbers\r\u001b[0K\r/ Fetching certificate serial numbers\r\u001b[?25h\u001b[0K\r\u001b[?25l| Fetching certificates\r\u001b[?25h\u001b[0K\r\u001b[?25l| Fetching content for a certificate\r\u001b[?25h\u001b[0K\r\u001b[?25l| Fetching content overrides\r\u001b[?25h\u001b[0K\r\u001b[?25l| Fetching release information\r\u001b[?25h\u001b[0K\r\u001b[?25l| Checking compliance status\r\u001b[?25h\u001b[0K\r\u001b[?25l| Checking compliance status\r\u001b[?25h\u001b[0K\r\u001b[?25l| Checking compliance status\r\u001b[?25h\u001b[0K\r\u001b[?25l| Checking compliance status\r\u001b[?25h\u001b[0K\r the exit status of last command is 0 \r\n"
+}
+2026-01-13 10:43:25,921 p=14538 u=ec2-user n=ansible | PLAY RECAP ******************************************************************************************
+2026-01-13 10:43:25,921 p=14538 u=ec2-user n=ansible | target2                    : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-13 14:04:39,157 p=6215 u=ec2-user n=ansible | ERROR! A playbook must be a list of plays, got a <class 'ansible.parsing.yaml.objects.AnsibleMapping'> instead: /home/ec2-user/scripts/ansible_sc/int_mul_pkg.yaml
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/int_mul_pkg.yaml': line 1, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+hosts: docker_containers
+^ here
+
+2026-01-13 14:07:22,379 p=7081 u=ec2-user n=ansible | PLAY [docker_containers] ***********************************************************************************
+2026-01-13 14:07:22,396 p=7081 u=ec2-user n=ansible | TASK [Gathering Facts] *************************************************************************************
+2026-01-13 14:07:24,388 p=7081 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 14:07:24,394 p=7081 u=ec2-user n=ansible | ok: [target2]
+2026-01-13 14:07:24,400 p=7081 u=ec2-user n=ansible | TASK [install all packages] ********************************************************************************
+2026-01-13 14:08:28,879 p=7081 u=ec2-user n=ansible | changed: [target2] => (item=git)
+2026-01-13 14:08:28,960 p=7081 u=ec2-user n=ansible | changed: [target1] => (item=git)
+2026-01-13 14:08:32,318 p=7081 u=ec2-user n=ansible | failed: [target2] (item=curl) => {"ansible_loop_var": "item", "changed": false, "failures": [], "item": "curl", "msg": "Depsolve Error occurred: \n Problem: problem with installed package curl-minimal-7.76.1-34.el9.aarch64\n  - package curl-minimal-7.76.1-34.el9.aarch64 from @System conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-14.el9_0.4.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-14.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-14.el9_0.5.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-19.el9_1.1.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-19.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-23.el9_2.1.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-19.el9_1.2.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-23.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-23.el9_2.4.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-23.el9_2.2.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-26.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-26.el9_3.2.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-26.el9_3.3.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-29.el9_4.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-29.el9_4.1.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-31.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-31.el9_6.1.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-34.el9.aarch64 from ubi-9-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - cannot install the best candidate for the job", "rc": 1, "results": []}
+2026-01-13 14:08:32,683 p=7081 u=ec2-user n=ansible | failed: [target1] (item=curl) => {"ansible_loop_var": "item", "changed": false, "failures": [], "item": "curl", "msg": "Depsolve Error occurred: \n Problem: problem with installed package curl-minimal-7.76.1-34.el9.aarch64\n  - package curl-minimal-7.76.1-34.el9.aarch64 from @System conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-14.el9_0.4.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-14.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-14.el9_0.5.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-19.el9_1.1.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-19.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-23.el9_2.1.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-19.el9_1.2.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-23.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-23.el9_2.4.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-23.el9_2.2.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-26.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-26.el9_3.2.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-26.el9_3.3.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-29.el9_4.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-29.el9_4.1.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-31.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-31.el9_6.1.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - package curl-minimal-7.76.1-34.el9.aarch64 from ubi-9-baseos-rpms conflicts with curl provided by curl-7.76.1-34.el9.aarch64 from rhel-9-for-aarch64-baseos-rpms\n  - cannot install the best candidate for the job", "rc": 1, "results": []}
+2026-01-13 14:08:36,609 p=7081 u=ec2-user n=ansible | changed: [target2] => (item=unzip)
+2026-01-13 14:08:36,967 p=7081 u=ec2-user n=ansible | changed: [target1] => (item=unzip)
+2026-01-13 14:08:36,969 p=7081 u=ec2-user n=ansible | PLAY RECAP *************************************************************************************************
+2026-01-13 14:08:36,969 p=7081 u=ec2-user n=ansible | target1                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-13 14:08:36,969 p=7081 u=ec2-user n=ansible | target2                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-13 14:18:41,757 p=10715 u=ec2-user n=ansible | PLAY [install git only on ubuntu machines] *****************************************************************
+2026-01-13 14:18:41,765 p=10715 u=ec2-user n=ansible | TASK [Gathering Facts] *************************************************************************************
+2026-01-13 14:18:43,338 p=10715 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 14:18:43,342 p=10715 u=ec2-user n=ansible | TASK [install git] *****************************************************************************************
+2026-01-13 14:18:43,355 p=10715 u=ec2-user n=ansible | skipping: [target1]
+2026-01-13 14:18:43,356 p=10715 u=ec2-user n=ansible | PLAY RECAP *************************************************************************************************
+2026-01-13 14:18:43,357 p=10715 u=ec2-user n=ansible | target1                    : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-01-13 14:19:06,171 p=10988 u=ec2-user n=ansible | PLAY [install git only on ubuntu machines] *****************************************************************
+2026-01-13 14:19:06,180 p=10988 u=ec2-user n=ansible | TASK [Gathering Facts] *************************************************************************************
+2026-01-13 14:19:07,465 p=10988 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 14:19:07,470 p=10988 u=ec2-user n=ansible | TASK [install git] *****************************************************************************************
+2026-01-13 14:19:07,482 p=10988 u=ec2-user n=ansible | skipping: [target1]
+2026-01-13 14:19:07,484 p=10988 u=ec2-user n=ansible | PLAY RECAP *************************************************************************************************
+2026-01-13 14:19:07,484 p=10988 u=ec2-user n=ansible | target1                    : ok=1    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-01-13 14:19:36,233 p=11245 u=ec2-user n=ansible | PLAY [install git only on ubuntu machines] *****************************************************************
+2026-01-13 14:19:36,242 p=11245 u=ec2-user n=ansible | TASK [Gathering Facts] *************************************************************************************
+2026-01-13 14:19:37,477 p=11245 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 14:19:37,482 p=11245 u=ec2-user n=ansible | TASK [install git] *****************************************************************************************
+2026-01-13 14:19:38,203 p=11245 u=ec2-user n=ansible | [WARNING]: Updating cache and auto-installing missing dependency: python3-apt
+
+2026-01-13 14:19:38,204 p=11245 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "cmd": "apt-get update", "msg": "[Errno 2] No such file or directory: b'apt-get'", "rc": 2, "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-01-13 14:19:38,205 p=11245 u=ec2-user n=ansible | PLAY RECAP *************************************************************************************************
+2026-01-13 14:19:38,206 p=11245 u=ec2-user n=ansible | target1                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-13 14:19:59,864 p=11571 u=ec2-user n=ansible | PLAY [install git only on ubuntu machines] *****************************************************************
+2026-01-13 14:19:59,872 p=11571 u=ec2-user n=ansible | TASK [Gathering Facts] *************************************************************************************
+2026-01-13 14:20:01,736 p=11571 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 14:20:01,746 p=11571 u=ec2-user n=ansible | TASK [install git] *****************************************************************************************
+2026-01-13 14:20:07,268 p=11571 u=ec2-user n=ansible | ok: [target1]
+2026-01-13 14:20:07,269 p=11571 u=ec2-user n=ansible | PLAY RECAP *************************************************************************************************
+2026-01-13 14:20:07,270 p=11571 u=ec2-user n=ansible | target1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 06:46:39,731 p=8938 u=ec2-user n=ansible | PLAY [creating devops user in all hosts] ***********************************************
+2026-01-21 06:46:39,745 p=8938 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 06:46:41,759 p=8938 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 06:46:41,762 p=8938 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 06:46:41,766 p=8938 u=ec2-user n=ansible | TASK [add user] ************************************************************************
+2026-01-21 06:46:42,499 p=8938 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "msg": "Group developers does not exist"}
+2026-01-21 06:46:42,511 p=8938 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": false, "msg": "Group developers does not exist"}
+2026-01-21 06:46:42,512 p=8938 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 06:46:42,512 p=8938 u=ec2-user n=ansible | target1                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-21 06:46:42,513 p=8938 u=ec2-user n=ansible | target2                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-21 06:50:17,329 p=10193 u=ec2-user n=ansible | PLAY [creating devops user in all hosts] ***********************************************
+2026-01-21 06:50:17,337 p=10193 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 06:50:18,781 p=10193 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 06:50:18,809 p=10193 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 06:50:18,813 p=10193 u=ec2-user n=ansible | TASK [add developers groups] ***********************************************************
+2026-01-21 06:50:19,449 p=10193 u=ec2-user n=ansible | changed: [target1]
+2026-01-21 06:50:19,467 p=10193 u=ec2-user n=ansible | changed: [target2]
+2026-01-21 06:50:19,474 p=10193 u=ec2-user n=ansible | TASK [add user] ************************************************************************
+2026-01-21 06:50:20,218 p=10193 u=ec2-user n=ansible | changed: [target1]
+2026-01-21 06:50:20,243 p=10193 u=ec2-user n=ansible | changed: [target2]
+2026-01-21 06:50:20,245 p=10193 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 06:50:20,245 p=10193 u=ec2-user n=ansible | target1                    : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 06:50:20,246 p=10193 u=ec2-user n=ansible | target2                    : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 06:55:56,486 p=12202 u=ec2-user n=ansible | PLAY [deleting a user] *****************************************************************
+2026-01-21 06:55:56,494 p=12202 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 06:55:57,983 p=12202 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 06:55:58,016 p=12202 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 06:55:58,021 p=12202 u=ec2-user n=ansible | TASK [deleting a user] *****************************************************************
+2026-01-21 06:55:58,748 p=12202 u=ec2-user n=ansible | changed: [target2]
+2026-01-21 06:55:58,754 p=12202 u=ec2-user n=ansible | changed: [target1]
+2026-01-21 06:55:58,760 p=12202 u=ec2-user n=ansible | TASK [delete group] ********************************************************************
+2026-01-21 06:55:59,336 p=12202 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (group) module: remove. Supported parameters include: force, gid, local, name, non_unique, state, system."}
+2026-01-21 06:55:59,361 p=12202 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (group) module: remove. Supported parameters include: force, gid, local, name, non_unique, state, system."}
+2026-01-21 06:55:59,363 p=12202 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 06:55:59,363 p=12202 u=ec2-user n=ansible | target1                    : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-21 06:55:59,363 p=12202 u=ec2-user n=ansible | target2                    : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-21 06:56:34,562 p=13013 u=ec2-user n=ansible | PLAY [deleting a user] *****************************************************************
+2026-01-21 06:56:34,569 p=13013 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 06:56:35,910 p=13013 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 06:56:35,923 p=13013 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 06:56:35,928 p=13013 u=ec2-user n=ansible | TASK [deleting a user] *****************************************************************
+2026-01-21 06:56:36,591 p=13013 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 06:56:36,611 p=13013 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 06:56:36,617 p=13013 u=ec2-user n=ansible | TASK [delete group] ********************************************************************
+2026-01-21 06:56:37,296 p=13013 u=ec2-user n=ansible | changed: [target2]
+2026-01-21 06:56:37,314 p=13013 u=ec2-user n=ansible | changed: [target1]
+2026-01-21 06:56:37,315 p=13013 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 06:56:37,315 p=13013 u=ec2-user n=ansible | target1                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 06:56:37,316 p=13013 u=ec2-user n=ansible | target2                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 07:04:55,150 p=15297 u=ec2-user n=ansible | ERROR! Unable to read source file (/home/ec2-user/scripts/ansible_sc/secrets.yaml): [Errno 2] No such file or directory: '/home/ec2-user/scripts/ansible_sc/secrets.yaml'
+2026-01-21 07:12:49,984 p=17474 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  found unacceptable key (unhashable type: 'AnsibleMapping')
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/set_passwd_usr.yml': line 10, column 18, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      state: present
+      password: {{ user_password }}
+                 ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2026-01-21 07:13:11,513 p=17560 u=ec2-user n=ansible | PLAY [setting password] ****************************************************************
+2026-01-21 07:13:11,520 p=17560 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 07:13:13,261 p=17560 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 07:13:13,298 p=17560 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 07:13:13,303 p=17560 u=ec2-user n=ansible | TASK [set password] ********************************************************************
+2026-01-21 07:13:13,330 p=17560 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'user_password' is undefined. 'user_password' is undefined\n\nThe error appears to be in '/home/ec2-user/scripts/ansible_sc/set_passwd_usr.yml': line 6, column 5, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  tasks:\n  - name: set password\n    ^ here\n"}
+2026-01-21 07:13:13,343 p=17560 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'user_password' is undefined. 'user_password' is undefined\n\nThe error appears to be in '/home/ec2-user/scripts/ansible_sc/set_passwd_usr.yml': line 6, column 5, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  tasks:\n  - name: set password\n    ^ here\n"}
+2026-01-21 07:13:13,345 p=17560 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 07:13:13,346 p=17560 u=ec2-user n=ansible | target1                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-21 07:13:13,348 p=17560 u=ec2-user n=ansible | target2                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-21 07:15:00,033 p=18357 u=ec2-user n=ansible | [WARNING]:  * Failed to parse /home/ec2-user/scripts/ansible_sc/inventory with yaml
+plugin: We were unable to read either as JSON nor YAML, these are the errors we got
+from each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading
+YAML.   did not find expected key  The error appears to be in
+'/home/ec2-user/scripts/ansible_sc/secrets.yml': line 3, column 22, but may be
+elsewhere in the file depending on the exact syntax problem.
+
+2026-01-21 07:15:00,033 p=18357 u=ec2-user n=ansible | [WARNING]:  * Failed to parse /home/ec2-user/scripts/ansible_sc/inventory with ini
+plugin: We were unable to read either as JSON nor YAML, these are the errors we got
+from each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading
+YAML.   did not find expected key  The error appears to be in
+'/home/ec2-user/scripts/ansible_sc/secrets.yml': line 3, column 22, but may be
+elsewhere in the file depending on the exact syntax problem.
+
+2026-01-21 07:15:00,034 p=18357 u=ec2-user n=ansible | [WARNING]: Unable to parse /home/ec2-user/scripts/ansible_sc/inventory as an inventory
+source
+
+2026-01-21 07:15:00,034 p=18357 u=ec2-user n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2026-01-21 07:15:00,058 p=18357 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/secrets.yml': line 3, column 22, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+2026-01-21 07:17:03,340 p=18988 u=ec2-user n=ansible | PLAY [setting password] ****************************************************************
+2026-01-21 07:17:03,348 p=18988 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 07:17:04,874 p=18988 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 07:17:04,875 p=18988 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 07:17:04,879 p=18988 u=ec2-user n=ansible | TASK [set password] ********************************************************************
+2026-01-21 07:17:04,918 p=18988 u=ec2-user n=ansible | [DEPRECATION WARNING]: Encryption using the Python crypt module is deprecated. The 
+Python crypt module is deprecated and will be removed from Python 3.13. Install the 
+passlib library for continued encryption functionality. This feature will be removed in
+ version 2.17. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2026-01-21 07:17:05,691 p=18988 u=ec2-user n=ansible | changed: [target1]
+2026-01-21 07:17:05,715 p=18988 u=ec2-user n=ansible | changed: [target2]
+2026-01-21 07:17:05,716 p=18988 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 07:17:05,716 p=18988 u=ec2-user n=ansible | target1                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 07:17:05,717 p=18988 u=ec2-user n=ansible | target2                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 07:20:40,476 p=20474 u=ec2-user n=ansible | PLAY [deleting a user] *****************************************************************
+2026-01-21 07:20:40,483 p=20474 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 07:20:41,999 p=20474 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 07:20:42,006 p=20474 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 07:20:42,011 p=20474 u=ec2-user n=ansible | TASK [deleting a user] *****************************************************************
+2026-01-21 07:20:42,768 p=20474 u=ec2-user n=ansible | changed: [target1]
+2026-01-21 07:20:42,773 p=20474 u=ec2-user n=ansible | changed: [target2]
+2026-01-21 07:20:42,780 p=20474 u=ec2-user n=ansible | TASK [delete group] ********************************************************************
+2026-01-21 07:20:43,358 p=20474 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 07:20:43,366 p=20474 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 07:20:43,368 p=20474 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 07:20:43,368 p=20474 u=ec2-user n=ansible | target1                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 07:20:43,368 p=20474 u=ec2-user n=ansible | target2                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 07:49:16,404 p=30211 u=ec2-user n=ansible | PLAY [create devops team with 3 users] *************************************************
+2026-01-21 07:49:16,412 p=30211 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 07:49:18,110 p=30211 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 07:49:18,146 p=30211 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 07:49:18,151 p=30211 u=ec2-user n=ansible | TASK [debug] ***************************************************************************
+2026-01-21 07:49:18,170 p=30211 u=ec2-user n=ansible | ok: [target1] => {
+    "msg": "first user is kamal"
+}
+2026-01-21 07:49:18,178 p=30211 u=ec2-user n=ansible | ok: [target2] => {
+    "msg": "first user is kamal"
+}
+2026-01-21 07:49:18,180 p=30211 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 07:49:18,181 p=30211 u=ec2-user n=ansible | target1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 07:49:18,181 p=30211 u=ec2-user n=ansible | target2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 07:56:42,729 p=31950 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  found unacceptable key (unhashable type: 'AnsibleMapping')
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/create_team.yml': line 25, column 14, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        append: yes
+      loop: {{ users }}
+             ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2026-01-21 07:57:15,509 p=32076 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  found unacceptable key (unhashable type: 'AnsibleMapping')
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/create_team.yml': line 18, column 16, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      user:
+        name: {{ item }}
+               ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2026-01-21 07:58:44,361 p=32453 u=ec2-user n=ansible | PLAY [create devops team with 3 users] *************************************************
+2026-01-21 07:58:44,369 p=32453 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 07:58:46,025 p=32453 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 07:58:46,058 p=32453 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 07:58:46,063 p=32453 u=ec2-user n=ansible | TASK [create devops group] *************************************************************
+2026-01-21 07:58:46,663 p=32453 u=ec2-user n=ansible | changed: [target2]
+2026-01-21 07:58:46,663 p=32453 u=ec2-user n=ansible | changed: [target1]
+2026-01-21 07:58:46,669 p=32453 u=ec2-user n=ansible | TASK [create 3 users] ******************************************************************
+2026-01-21 07:58:46,728 p=32453 u=ec2-user n=ansible | [DEPRECATION WARNING]: Encryption using the Python crypt module is deprecated. The 
+Python crypt module is deprecated and will be removed from Python 3.13. Install the 
+passlib library for continued encryption functionality. This feature will be removed in
+ version 2.17. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2026-01-21 07:58:47,433 p=32453 u=ec2-user n=ansible | changed: [target1] => (item=kamal)
+2026-01-21 07:58:47,454 p=32453 u=ec2-user n=ansible | changed: [target2] => (item=kamal)
+2026-01-21 07:58:47,955 p=32453 u=ec2-user n=ansible | changed: [target1] => (item=rahul)
+2026-01-21 07:58:47,998 p=32453 u=ec2-user n=ansible | changed: [target2] => (item=rahul)
+2026-01-21 07:58:48,571 p=32453 u=ec2-user n=ansible | changed: [target2] => (item=ram)
+2026-01-21 07:58:48,603 p=32453 u=ec2-user n=ansible | changed: [target1] => (item=ram)
+2026-01-21 07:58:48,606 p=32453 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 07:58:48,606 p=32453 u=ec2-user n=ansible | target1                    : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 07:58:48,606 p=32453 u=ec2-user n=ansible | target2                    : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 08:45:26,076 p=43093 u=ec2-user n=ansible | ERROR! 'users' is not a valid attribute for a Play
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/delete_user.yml': line 1, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: deleting a user
+  ^ here
+
+2026-01-21 08:46:12,369 p=43250 u=ec2-user n=ansible | PLAY [deleting a user] *****************************************************************
+2026-01-21 08:46:12,377 p=43250 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 08:46:13,933 p=43250 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 08:46:14,020 p=43250 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 08:46:14,025 p=43250 u=ec2-user n=ansible | TASK [deleting a user] *****************************************************************
+2026-01-21 08:46:14,804 p=43250 u=ec2-user n=ansible | changed: [target2] => (item=kamal)
+2026-01-21 08:46:14,831 p=43250 u=ec2-user n=ansible | changed: [target1] => (item=kamal)
+2026-01-21 08:46:15,381 p=43250 u=ec2-user n=ansible | changed: [target2] => (item=rahul)
+2026-01-21 08:46:15,401 p=43250 u=ec2-user n=ansible | changed: [target1] => (item=rahul)
+2026-01-21 08:46:15,937 p=43250 u=ec2-user n=ansible | changed: [target2] => (item=ram)
+2026-01-21 08:46:15,944 p=43250 u=ec2-user n=ansible | changed: [target1] => (item=ram)
+2026-01-21 08:46:15,955 p=43250 u=ec2-user n=ansible | TASK [delete group] ********************************************************************
+2026-01-21 08:46:16,568 p=43250 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 08:46:16,608 p=43250 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 08:46:16,609 p=43250 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 08:46:16,610 p=43250 u=ec2-user n=ansible | target1                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 08:46:16,610 p=43250 u=ec2-user n=ansible | target2                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

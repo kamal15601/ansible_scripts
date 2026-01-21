@@ -1,0 +1,26 @@
+- name: create devops team with 3 users 
+  hosts: all
+  become: yes
+  vars:
+    users:
+      - kamal
+      - rahul
+      - ram
+
+  tasks:
+    - name: create devops group
+      group:
+        name: devops
+        state: present
+
+    - name: create 3 users
+      user:
+        name: "{{ item }}"
+        state: present
+        shell: /bin/bash
+        password: "{{ user_password }}"
+        create_home: yes
+        groups: devops
+        append: yes
+      loop: "{{ users }}"
+    

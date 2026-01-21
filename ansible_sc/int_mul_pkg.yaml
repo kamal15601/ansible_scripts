@@ -1,0 +1,13 @@
+- hosts: docker_containers
+  become: yes
+  vars:
+    packages:
+      - git
+      - curl
+      - unzip
+  tasks:
+    - name: install all packages
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ packages }}"

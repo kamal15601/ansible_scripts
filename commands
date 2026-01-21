@@ -1,0 +1,28 @@
+random
+shuf: generate random permutations
+fold: wrap ecah input line into fit
+sha256sum
+date
+hash
+basename
+dirname
+${0} -- name of script or program being executed
+$1, $2, … → Positional arguments
+$# → Number of arguments
+$@ → All arguments
+$$ → PID of the current shell
+$? → Exit status of last command
+sleep
+true
+shift
+case
+readonly variable
+logger
+cp -p(preserve the actual details of the file)
+locate
+userdel
+cut
+
+
+
+
