@@ -679,3 +679,126 @@ The offending line appears to be:
 2026-01-21 08:46:16,609 p=43250 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
 2026-01-21 08:46:16,610 p=43250 u=ec2-user n=ansible | target1                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2026-01-21 08:46:16,610 p=43250 u=ec2-user n=ansible | target2                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 11:02:17,972 p=71263 u=ec2-user n=ansible | ubuntu-target | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-21 11:02:18,118 p=71263 u=ec2-user n=ansible | target2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-21 11:02:18,189 p=71263 u=ec2-user n=ansible | target1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-21 11:23:46,499 p=76379 u=ec2-user n=ansible | [WARNING]: Found both group and host with same name: redhat_containers
+
+2026-01-21 11:23:46,499 p=76379 u=ec2-user n=ansible | [WARNING]: Found both group and host with same name: ubuntu_containers
+
+2026-01-21 11:23:46,596 p=76379 u=ec2-user n=ansible | PLAY [install packages based on OS_family] *********************************************
+2026-01-21 11:23:46,605 p=76379 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 11:23:46,674 p=76379 u=ec2-user n=ansible | fatal: [redhat_containers]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname redhat_containers: Name or service not known", "unreachable": true}
+2026-01-21 11:23:46,704 p=76379 u=ec2-user n=ansible | fatal: [ubuntu_containers]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname ubuntu_containers: Name or service not known", "unreachable": true}
+2026-01-21 11:23:48,480 p=76379 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 11:23:48,519 p=76379 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-01-21 11:23:48,522 p=76379 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 11:23:48,530 p=76379 u=ec2-user n=ansible | TASK [install packages in ubuntu] ******************************************************
+2026-01-21 11:23:48,575 p=76379 u=ec2-user n=ansible | skipping: [target1]
+2026-01-21 11:23:48,585 p=76379 u=ec2-user n=ansible | skipping: [target2]
+2026-01-21 11:23:48,593 p=76379 u=ec2-user n=ansible | skipping: [ubuntu-target]
+2026-01-21 11:23:48,597 p=76379 u=ec2-user n=ansible | TASK [install packages in rhel] ********************************************************
+2026-01-21 11:23:48,650 p=76379 u=ec2-user n=ansible | skipping: [ubuntu-target]
+2026-01-21 11:24:49,827 p=76379 u=ec2-user n=ansible | changed: [target1]
+2026-01-21 11:24:50,781 p=76379 u=ec2-user n=ansible | changed: [target2]
+2026-01-21 11:24:50,783 p=76379 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 11:24:50,783 p=76379 u=ec2-user n=ansible | redhat_containers          : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 11:24:50,783 p=76379 u=ec2-user n=ansible | target1                    : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-01-21 11:24:50,784 p=76379 u=ec2-user n=ansible | target2                    : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-01-21 11:24:50,784 p=76379 u=ec2-user n=ansible | ubuntu-target              : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2026-01-21 11:24:50,784 p=76379 u=ec2-user n=ansible | ubuntu_containers          : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 11:27:15,529 p=77916 u=ec2-user n=ansible | PLAY [install packages based on OS_family] *********************************************
+2026-01-21 11:27:15,539 p=77916 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 11:27:17,070 p=77916 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-01-21 11:27:17,344 p=77916 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 11:27:17,361 p=77916 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 11:27:17,367 p=77916 u=ec2-user n=ansible | TASK [install packages in ubuntu] ******************************************************
+2026-01-21 11:27:17,420 p=77916 u=ec2-user n=ansible | skipping: [target1]
+2026-01-21 11:27:17,421 p=77916 u=ec2-user n=ansible | skipping: [target2]
+2026-01-21 11:27:17,427 p=77916 u=ec2-user n=ansible | skipping: [ubuntu-target]
+2026-01-21 11:27:17,431 p=77916 u=ec2-user n=ansible | TASK [install packages in rhel] ********************************************************
+2026-01-21 11:27:17,474 p=77916 u=ec2-user n=ansible | skipping: [ubuntu-target]
+2026-01-21 11:27:21,399 p=77916 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 11:27:21,888 p=77916 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 11:27:21,890 p=77916 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 11:27:21,890 p=77916 u=ec2-user n=ansible | target1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-01-21 11:27:21,891 p=77916 u=ec2-user n=ansible | target2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-01-21 11:27:21,891 p=77916 u=ec2-user n=ansible | ubuntu-target              : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2026-01-21 11:27:31,391 p=78563 u=ec2-user n=ansible | [WARNING]: Found both group and host with same name: redhat_containers
+
+2026-01-21 11:27:31,392 p=78563 u=ec2-user n=ansible | [WARNING]: Found both group and host with same name: ubuntu_containers
+
+2026-01-21 11:27:31,486 p=78563 u=ec2-user n=ansible | PLAY [install packages based on OS_family] *********************************************
+2026-01-21 11:27:31,495 p=78563 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 11:27:31,619 p=78563 u=ec2-user n=ansible | fatal: [redhat_containers]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname redhat_containers: Name or service not known", "unreachable": true}
+2026-01-21 11:27:31,621 p=78563 u=ec2-user n=ansible | fatal: [ubuntu_containers]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname ubuntu_containers: Name or service not known", "unreachable": true}
+2026-01-21 11:27:32,861 p=78563 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-01-21 11:27:33,110 p=78563 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 11:27:33,163 p=78563 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 11:27:33,167 p=78563 u=ec2-user n=ansible | TASK [install packages in ubuntu] ******************************************************
+2026-01-21 11:27:33,222 p=78563 u=ec2-user n=ansible | skipping: [target1]
+2026-01-21 11:27:33,234 p=78563 u=ec2-user n=ansible | skipping: [target2]
+2026-01-21 11:27:33,240 p=78563 u=ec2-user n=ansible | skipping: [ubuntu-target]
+2026-01-21 11:27:33,244 p=78563 u=ec2-user n=ansible | TASK [install packages in rhel] ********************************************************
+2026-01-21 11:27:33,273 p=78563 u=ec2-user n=ansible | skipping: [ubuntu-target]
+2026-01-21 11:27:37,008 p=78563 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 11:27:37,115 p=78563 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 11:27:37,117 p=78563 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 11:27:37,117 p=78563 u=ec2-user n=ansible | redhat_containers          : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 11:27:37,117 p=78563 u=ec2-user n=ansible | target1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-01-21 11:27:37,118 p=78563 u=ec2-user n=ansible | target2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-01-21 11:27:37,118 p=78563 u=ec2-user n=ansible | ubuntu-target              : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2026-01-21 11:27:37,118 p=78563 u=ec2-user n=ansible | ubuntu_containers          : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-21 11:28:23,955 p=79306 u=ec2-user n=ansible | PLAY [install packages based on OS_family] *********************************************
+2026-01-21 11:28:23,964 p=79306 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 11:28:25,428 p=79306 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-01-21 11:28:25,558 p=79306 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 11:28:25,565 p=79306 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 11:28:25,571 p=79306 u=ec2-user n=ansible | TASK [install packages in ubuntu] ******************************************************
+2026-01-21 11:28:25,590 p=79306 u=ec2-user n=ansible | skipping: [target1]
+2026-01-21 11:28:25,632 p=79306 u=ec2-user n=ansible | skipping: [target2]
+2026-01-21 11:28:25,642 p=79306 u=ec2-user n=ansible | skipping: [ubuntu-target]
+2026-01-21 11:28:25,646 p=79306 u=ec2-user n=ansible | TASK [install packages in rhel] ********************************************************
+2026-01-21 11:28:25,698 p=79306 u=ec2-user n=ansible | skipping: [ubuntu-target]
+2026-01-21 11:28:29,439 p=79306 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 11:28:29,543 p=79306 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 11:28:29,544 p=79306 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 11:28:29,544 p=79306 u=ec2-user n=ansible | target1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-01-21 11:28:29,545 p=79306 u=ec2-user n=ansible | target2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-01-21 11:28:29,545 p=79306 u=ec2-user n=ansible | ubuntu-target              : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2026-01-21 11:29:51,523 p=80302 u=ec2-user n=ansible | ERROR! the playbook: inst_mult_pkg.yaml could not be found
+2026-01-21 11:30:05,108 p=80390 u=ec2-user n=ansible | PLAY [install packages based on OS_family] *********************************************
+2026-01-21 11:30:05,116 p=80390 u=ec2-user n=ansible | TASK [Gathering Facts] *****************************************************************
+2026-01-21 11:30:06,621 p=80390 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-01-21 11:30:06,873 p=80390 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 11:30:06,876 p=80390 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 11:30:06,883 p=80390 u=ec2-user n=ansible | TASK [install packages in ubuntu] ******************************************************
+2026-01-21 11:30:06,935 p=80390 u=ec2-user n=ansible | skipping: [target1]
+2026-01-21 11:30:06,936 p=80390 u=ec2-user n=ansible | skipping: [target2]
+2026-01-21 11:30:06,943 p=80390 u=ec2-user n=ansible | skipping: [ubuntu-target]
+2026-01-21 11:30:06,947 p=80390 u=ec2-user n=ansible | TASK [install packages in rhel] ********************************************************
+2026-01-21 11:30:06,994 p=80390 u=ec2-user n=ansible | skipping: [ubuntu-target]
+2026-01-21 11:30:10,716 p=80390 u=ec2-user n=ansible | ok: [target1]
+2026-01-21 11:30:11,088 p=80390 u=ec2-user n=ansible | ok: [target2]
+2026-01-21 11:30:11,090 p=80390 u=ec2-user n=ansible | PLAY RECAP *****************************************************************************
+2026-01-21 11:30:11,090 p=80390 u=ec2-user n=ansible | target1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-01-21 11:30:11,090 p=80390 u=ec2-user n=ansible | target2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2026-01-21 11:30:11,090 p=80390 u=ec2-user n=ansible | ubuntu-target              : ok=1    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
