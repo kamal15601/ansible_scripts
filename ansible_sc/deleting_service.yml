@@ -1,0 +1,17 @@
+- name: deleting_service in remote server
+  hosts: ec2_instance
+  become: yes
+  vars_prompt:
+    - name: service_name
+      prompt: "enter you service you want to delete "
+      private: no 
+  tasks:
+    - name: stop the servce if it is running
+      ansible.builtin.service:
+        name: "{{ service_name }}"
+        state: stopped
+      ignore_errors: yes
+    - name: delete_service
+      ansible.builtin.package:
+        - name: "{{ service_name }}"
+          state: absent
