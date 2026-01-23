@@ -1,0 +1,11 @@
+# setting password to specific user after creating 
+- name: setting password
+  hosts: all
+  become: yes
+  tasks:
+  - name: set password
+    user:
+      name: devops
+      state: present
+      password: "{{ user_password }}"
+      shell: /bin/bash

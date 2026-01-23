@@ -1,0 +1,10 @@
+---
+- name: install httpd
+  ansible.builtin.package:
+    name: httpd
+    state: present
+  when: ansible_os_family == "RedHat"
+  become: true
+- import_tasks: config.yml
+- import_tasks: deploy.yml
+- import_tasks: start_service.yml

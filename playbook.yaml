@@ -1,0 +1,18 @@
+- hosts: target2
+  become: true
+  vars_files:
+    - secrets.yml
+  tasks:
+    - name: check kernel version
+      shell: uname -r
+      register: kernel_ver
+    - name: print kernel version
+      debug:
+        msg: "kernel version is {{ kernel_ver.stdout }}"
+
+    - name: register redhat subscription
+      script: "register_subs_mn.sh {{ username }} {{ pass_key }}"
+      register: output
+    - name: print output
+      debug:
+         msg: "{{ output.stdout }}"

@@ -1,0 +1,13 @@
+- name: running playbook based on user input
+  hosts: redhat_containers
+  become: yes
+  vars_prompt:
+    - name: "filename"
+      prompt: "enter filename or script path to run in remote servers"
+      private: no  #able to see input on terminal
+  tasks:
+    - name: running this script on remote servers
+      script: "{{ filename }}"
+      register: output
+    - debug:
+        msg: "output is : {{ ansible_facts | to_yaml }}"

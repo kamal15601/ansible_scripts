@@ -1,0 +1,10 @@
+- name: install git only on ubuntu machines
+  hosts: target1
+  become: yes
+  tasks:
+    - name: install git
+      ansible.builtin.package:
+        name: git
+        state: present
+        update_cache: yes
+      when: ansible_os_family == "RedHat"

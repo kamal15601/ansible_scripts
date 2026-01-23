@@ -1,0 +1,16 @@
+- name: creating devops user in all hosts
+  hosts: all
+  become: yes
+  tasks:
+    - name: add developers groups
+      group: 
+        name: developers
+        state: present
+    - name: add user
+      user:
+        name: devops
+        state: present
+        groups: developers
+        create_home: yes
+        shell: /bin/bash
+      

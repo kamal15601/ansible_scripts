@@ -1,0 +1,10 @@
+#using httpd role to setup httpd in remote server
+---
+- name: using httpd role
+  hosts: redhat_containers
+  become: true
+  roles:
+    - httpd
+    
+
+  

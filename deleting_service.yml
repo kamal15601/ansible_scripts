@@ -1,0 +1,29 @@
+---
+- name: deleting_service in remote server
+  hosts: ec2_instance
+  become: true
+  vars_prompt:
+    - name: service_name
+      prompt: "enter you service you want to delete"
+      private: false
+  tasks:
+    - name: stop the servce if it is running
+      ansible.builtin.service:
+        name: "{{ service_name }}"
+        state: stopped
+      ignore_errors: true
+    - name: delete_service
+      ansible.builtin.package:
+        name: "{{ service_name }}"
+        state: absent
+      ignore_errors: true
+    - name: remove config files if any
+      ansible.builtin.file:
+        path: "/etc/{{ service_name }}"
+        state: absent
+      ignore_errors: true
+    - name: remove log files if any
+      ansible.builtin.file:
+        path: "/var/log/{{ service_name }}"
+        state: absent
+      ignore_errors: true

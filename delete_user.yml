@@ -1,0 +1,19 @@
+- name: deleting a user
+  hosts: all
+  become: yes
+  vars:
+    users:
+      - kamal
+      - rahul
+      - ram
+  tasks:
+    - name: deleting a user
+      user:
+        name: "{{ item }}"
+        state: absent
+        remove: yes
+      loop: "{{ users }}"
+    - name: delete group
+      group: 
+        name: developers
+        state: absent
