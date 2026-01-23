@@ -1184,3 +1184,120 @@ The offending line appears to be:
 2026-01-22 09:05:47,396 p=33854 u=ec2-user n=ansible | changed: [target3]
 2026-01-22 09:05:47,398 p=33854 u=ec2-user n=ansible | PLAY RECAP *******************************************************************************************
 2026-01-22 09:05:47,398 p=33854 u=ec2-user n=ansible | target3                    : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-22 11:58:51,798 p=73486 u=ec2-user n=ansible | PLAY [using httpd role] ********************************************************
+2026-01-22 11:58:51,817 p=73486 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-22 11:58:54,883 p=73486 u=ec2-user n=ansible | ok: [target3]
+2026-01-22 11:58:54,893 p=73486 u=ec2-user n=ansible | TASK [httpd : start the service] ***********************************************
+2026-01-22 11:58:55,799 p=73486 u=ec2-user n=ansible | fatal: [target3]: FAILED! => {"changed": false, "msg": "Unable to enable service httpd: Failed to enable unit: Unit file httpd.service does not exist.\n"}
+2026-01-22 11:58:55,801 p=73486 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-01-22 11:58:55,801 p=73486 u=ec2-user n=ansible | target3                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-22 12:01:15,003 p=74024 u=ec2-user n=ansible | PLAY [using httpd role] *******************************************************************************************************************
+2026-01-22 12:01:15,016 p=74024 u=ec2-user n=ansible | TASK [Gathering Facts] ********************************************************************************************************************
+2026-01-22 12:01:16,757 p=74024 u=ec2-user n=ansible | ok: [target3]
+2026-01-22 12:01:16,769 p=74024 u=ec2-user n=ansible | TASK [httpd : install httpd] **************************************************************************************************************
+2026-01-22 12:01:21,126 p=74024 u=ec2-user n=ansible | changed: [target3]
+2026-01-22 12:01:21,131 p=74024 u=ec2-user n=ansible | TASK [httpd : start the service] **********************************************************************************************************
+2026-01-22 12:01:22,467 p=74024 u=ec2-user n=ansible | fatal: [target3]: FAILED! => {"changed": false, "msg": "Unable to start service httpd: Job for httpd.service failed because the control process exited with error code.\nSee \"systemctl status httpd.service\" and \"journalctl -xeu httpd.service\" for details.\n"}
+2026-01-22 12:01:22,468 p=74024 u=ec2-user n=ansible | PLAY RECAP ********************************************************************************************************************************
+2026-01-22 12:01:22,469 p=74024 u=ec2-user n=ansible | target3                    : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-22 12:08:58,735 p=75582 u=ec2-user n=ansible | PLAY [using httpd role] ******************************************************************************
+2026-01-22 12:08:58,751 p=75582 u=ec2-user n=ansible | TASK [Gathering Facts] *******************************************************************************
+2026-01-22 12:09:00,515 p=75582 u=ec2-user n=ansible | ok: [target3]
+2026-01-22 12:09:00,524 p=75582 u=ec2-user n=ansible | TASK [httpd : install httpd] *************************************************************************
+2026-01-22 12:09:03,253 p=75582 u=ec2-user n=ansible | ok: [target3]
+2026-01-22 12:09:03,260 p=75582 u=ec2-user n=ansible | TASK [httpd : deploy index.html file] ****************************************************************
+2026-01-22 12:09:04,361 p=75582 u=ec2-user n=ansible | changed: [target3]
+2026-01-22 12:09:04,396 p=75582 u=ec2-user n=ansible | TASK [httpd : deploy httpd config] *******************************************************************
+2026-01-22 12:09:05,154 p=75582 u=ec2-user n=ansible | fatal: [target3]: FAILED! => {"changed": false, "checksum": "666722b9d54f1de6c717d43ac6c6620c3ba9575a", "msg": "Destination directory /etc/httpd/conf does not exist"}
+2026-01-22 12:09:05,156 p=75582 u=ec2-user n=ansible | PLAY RECAP *******************************************************************************************
+2026-01-22 12:09:05,156 p=75582 u=ec2-user n=ansible | target3                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-22 12:10:07,766 p=75915 u=ec2-user n=ansible | PLAY [using httpd role] ******************************************************************************
+2026-01-22 12:10:07,779 p=75915 u=ec2-user n=ansible | TASK [Gathering Facts] *******************************************************************************
+2026-01-22 12:10:09,278 p=75915 u=ec2-user n=ansible | ok: [target3]
+2026-01-22 12:10:09,286 p=75915 u=ec2-user n=ansible | TASK [httpd : install httpd] *************************************************************************
+2026-01-22 12:10:11,901 p=75915 u=ec2-user n=ansible | ok: [target3]
+2026-01-22 12:10:11,907 p=75915 u=ec2-user n=ansible | TASK [httpd : deploy httpd config] *******************************************************************
+2026-01-22 12:10:12,988 p=75915 u=ec2-user n=ansible | fatal: [target3]: FAILED! => {"changed": false, "checksum": "666722b9d54f1de6c717d43ac6c6620c3ba9575a", "msg": "Destination directory /etc/httpd/conf does not exist"}
+2026-01-22 12:10:12,990 p=75915 u=ec2-user n=ansible | PLAY RECAP *******************************************************************************************
+2026-01-22 12:10:12,990 p=75915 u=ec2-user n=ansible | target3                    : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-22 12:19:59,273 p=77893 u=ec2-user n=ansible | PLAY [using httpd role] ********************************************************
+2026-01-22 12:19:59,291 p=77893 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-22 12:20:01,706 p=77893 u=ec2-user n=ansible | ok: [target3]
+2026-01-22 12:20:01,714 p=77893 u=ec2-user n=ansible | TASK [httpd : install httpd] ***************************************************
+2026-01-22 12:20:04,771 p=77893 u=ec2-user n=ansible | fatal: [target3]: FAILED! => {"changed": false, "module_stderr": "Shared connection to 100.49.46.57 closed.\r\n", "module_stdout": "\u001b[?25l| Fetching organizations\r\u001b[?25h\u001b[0K\r", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 137}
+2026-01-22 12:20:04,773 p=77893 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-01-22 12:20:04,773 p=77893 u=ec2-user n=ansible | target3                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-22 12:22:27,296 p=78449 u=ec2-user n=ansible | PLAY [using httpd role] ******************************************************************************
+2026-01-22 12:22:27,306 p=78449 u=ec2-user n=ansible | TASK [Gathering Facts] *******************************************************************************
+2026-01-22 12:22:37,339 p=78449 u=ec2-user n=ansible | fatal: [target3]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange\r\nConnection to 100.49.46.57 port 22 timed out", "unreachable": true}
+2026-01-22 12:22:37,340 p=78449 u=ec2-user n=ansible | PLAY RECAP *******************************************************************************************
+2026-01-22 12:22:37,341 p=78449 u=ec2-user n=ansible | target3                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-22 12:23:59,428 p=78815 u=ec2-user n=ansible | PLAY [using httpd role] ******************************************************************************
+2026-01-22 12:23:59,437 p=78815 u=ec2-user n=ansible | TASK [Gathering Facts] *******************************************************************************
+2026-01-22 12:24:01,237 p=78815 u=ec2-user n=ansible | ok: [target3]
+2026-01-22 12:24:01,244 p=78815 u=ec2-user n=ansible | TASK [httpd : install httpd] *************************************************************************
+2026-01-22 12:24:12,773 p=78815 u=ec2-user n=ansible | changed: [target3]
+2026-01-22 12:24:12,779 p=78815 u=ec2-user n=ansible | TASK [httpd : deploy httpd config] *******************************************************************
+2026-01-22 12:24:13,950 p=78815 u=ec2-user n=ansible | changed: [target3]
+2026-01-22 12:24:13,984 p=78815 u=ec2-user n=ansible | TASK [httpd : deploy index.html file] ****************************************************************
+2026-01-22 12:24:14,861 p=78815 u=ec2-user n=ansible | ok: [target3]
+2026-01-22 12:24:14,867 p=78815 u=ec2-user n=ansible | TASK [httpd : start the service] *********************************************************************
+2026-01-22 12:24:16,087 p=78815 u=ec2-user n=ansible | fatal: [target3]: FAILED! => {"changed": false, "msg": "Unable to start service httpd: Job for httpd.service failed because the control process exited with error code.\nSee \"systemctl status httpd.service\" and \"journalctl -xeu httpd.service\" for details.\n"}
+2026-01-22 12:24:16,088 p=78815 u=ec2-user n=ansible | PLAY RECAP *******************************************************************************************
+2026-01-22 12:24:16,089 p=78815 u=ec2-user n=ansible | target3                    : ok=4    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-22 12:56:10,042 p=84875 u=ec2-user n=ansible | PLAY [using httpd role] ***********************************************************************************************************************************************************
+2026-01-22 12:56:10,056 p=84875 u=ec2-user n=ansible | TASK [Gathering Facts] ************************************************************************************************************************************************************
+2026-01-22 12:56:11,831 p=84875 u=ec2-user n=ansible | ok: [target3]
+2026-01-22 12:56:11,839 p=84875 u=ec2-user n=ansible | TASK [httpd : install httpd] ******************************************************************************************************************************************************
+2026-01-22 12:56:14,917 p=84875 u=ec2-user n=ansible | ok: [target3]
+2026-01-22 12:56:14,923 p=84875 u=ec2-user n=ansible | TASK [httpd : deploy httpd config] ************************************************************************************************************************************************
+2026-01-22 12:56:16,009 p=84875 u=ec2-user n=ansible | ok: [target3]
+2026-01-22 12:56:16,051 p=84875 u=ec2-user n=ansible | TASK [httpd : deploy index.html file] *********************************************************************************************************************************************
+2026-01-22 12:56:16,765 p=84875 u=ec2-user n=ansible | ok: [target3]
+2026-01-22 12:56:16,770 p=84875 u=ec2-user n=ansible | TASK [httpd : start the service] **************************************************************************************************************************************************
+2026-01-22 12:56:17,744 p=84875 u=ec2-user n=ansible | fatal: [target3]: FAILED! => {"changed": false, "msg": "Unable to start service httpd: Job for httpd.service failed because the control process exited with error code.\nSee \"systemctl status httpd.service\" and \"journalctl -xeu httpd.service\" for details.\n"}
+2026-01-22 12:56:17,746 p=84875 u=ec2-user n=ansible | PLAY RECAP ************************************************************************************************************************************************************************
+2026-01-22 12:56:17,746 p=84875 u=ec2-user n=ansible | target3                    : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-22 12:56:53,475 p=85206 u=ec2-user n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: rhel_containers
+
+2026-01-22 12:56:53,476 p=85206 u=ec2-user n=ansible | PLAY [using httpd role] *******************************************************************************************************************
+2026-01-22 12:56:53,476 p=85206 u=ec2-user n=ansible | skipping: no hosts matched
+2026-01-22 12:56:53,476 p=85206 u=ec2-user n=ansible | PLAY RECAP ********************************************************************************************************************************
+2026-01-22 12:57:32,704 p=85369 u=ec2-user n=ansible | PLAY [using httpd role] *******************************************************************************************************************
+2026-01-22 12:57:32,713 p=85369 u=ec2-user n=ansible | TASK [Gathering Facts] ********************************************************************************************************************
+2026-01-22 12:57:34,595 p=85369 u=ec2-user n=ansible | ok: [target1]
+2026-01-22 12:57:34,605 p=85369 u=ec2-user n=ansible | ok: [target2]
+2026-01-22 12:57:34,613 p=85369 u=ec2-user n=ansible | TASK [httpd : install httpd] **************************************************************************************************************
+2026-01-23 11:53:26,264 p=16952 u=ec2-user n=ansible | target3 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-23 11:53:56,686 p=17299 u=ec2-user n=ansible | target3 | CHANGED | rc=0 >>
+Linux ip-10-0-0-222.ec2.internal 5.14.0-570.72.1.el9_6.aarch64 #1 SMP PREEMPT_DYNAMIC Tue Dec 2 07:12:01 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
+
+2026-01-23 11:54:40,359 p=17547 u=ec2-user n=ansible | target3 | FAILED | rc=1 >>
+cat: /etc/os-relase: No such file or directorynon-zero return code
+
+2026-01-23 11:55:05,120 p=17681 u=ec2-user n=ansible | target3 | CHANGED | rc=0 >>
+NAME="Red Hat Enterprise Linux"
+VERSION="9.6 (Plow)"
+ID="rhel"
+ID_LIKE="fedora"
+VERSION_ID="9.6"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="Red Hat Enterprise Linux 9.6 (Plow)"
+ANSI_COLOR="0;31"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:redhat:enterprise_linux:9::baseos"
+HOME_URL="https://www.redhat.com/"
+DOCUMENTATION_URL="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9"
+BUG_REPORT_URL="https://issues.redhat.com/"
+
+REDHAT_BUGZILLA_PRODUCT="Red Hat Enterprise Linux 9"
+REDHAT_BUGZILLA_PRODUCT_VERSION=9.6
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
+REDHAT_SUPPORT_PRODUCT_VERSION="9.6"
+

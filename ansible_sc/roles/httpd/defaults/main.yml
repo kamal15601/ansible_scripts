@@ -1,0 +1,9 @@
+---
+# defaults file for httpd
+httpd_pkg_name: httpd
+httpd_service_name: httpd
+httpd_port: 80
+httpd_docroot: /var/www/html
+httpd_user: apache
+httpd_group: apache
+index_file_name: index.html

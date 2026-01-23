@@ -1,0 +1,4 @@
+---
+# vars file for httpd
+httpd_config_path: /etc/httpd/conf/httpd.conf
+httpd_docrott: /var/www/html

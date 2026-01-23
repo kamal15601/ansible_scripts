@@ -1,0 +1,7 @@
+---
+- name: deploy index.html file
+  copy:
+    src: index.html
+    dest: "{{ httpd_docrott }}/index.html"
+    mode: 0644
+  become: true
