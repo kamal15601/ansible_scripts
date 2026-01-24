@@ -1301,3 +1301,16 @@ REDHAT_BUGZILLA_PRODUCT_VERSION=9.6
 REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
 REDHAT_SUPPORT_PRODUCT_VERSION="9.6"
 
+2026-01-23 12:48:30,649 p=30328 u=ec2-user n=ansible | PLAY [deleting_service in remote server] *************************************************************
+2026-01-23 12:48:30,658 p=30328 u=ec2-user n=ansible | TASK [Gathering Facts] *******************************************************************************
+2026-01-23 12:48:32,777 p=30328 u=ec2-user n=ansible | ok: [target3]
+2026-01-23 12:48:32,783 p=30328 u=ec2-user n=ansible | TASK [stop the servce if it is running] **************************************************************
+2026-01-23 12:48:33,656 p=30328 u=ec2-user n=ansible | ok: [target3]
+2026-01-23 12:48:33,661 p=30328 u=ec2-user n=ansible | TASK [delete_service] ********************************************************************************
+2026-01-23 12:48:38,166 p=30328 u=ec2-user n=ansible | changed: [target3]
+2026-01-23 12:48:38,171 p=30328 u=ec2-user n=ansible | TASK [remove config files if any] ********************************************************************
+2026-01-23 12:48:38,794 p=30328 u=ec2-user n=ansible | changed: [target3]
+2026-01-23 12:48:38,826 p=30328 u=ec2-user n=ansible | TASK [remove log files if any] ***********************************************************************
+2026-01-23 12:48:39,230 p=30328 u=ec2-user n=ansible | changed: [target3]
+2026-01-23 12:48:39,231 p=30328 u=ec2-user n=ansible | PLAY RECAP *******************************************************************************************
+2026-01-23 12:48:39,231 p=30328 u=ec2-user n=ansible | target3                    : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

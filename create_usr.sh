@@ -13,12 +13,11 @@ fi
 #read -p 'enter your fullname: ' fullname
 
 #generate password with random command
-char=
 rand_char=$(echo "!@#$%^&*()_+=-" | fold -w1 | shuf | head -c1)
 password="$(date +%s%N | sha256sum | head -c8 )${rand_char}"
 
 #create the user
-useradd -c "${1}" -m ${2}
+useradd -c "${1}" -m  "${2}"
 
 #check the user is created or not
 if [[ "${?}" -ne 0 ]]
