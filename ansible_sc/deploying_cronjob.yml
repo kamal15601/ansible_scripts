@@ -1,0 +1,10 @@
+- name: deploying cron job
+  hosts: all
+  become: true
+  tasks:
+    - name: scheduling log clean
+      cron:
+        name: "cleanup logs"
+        minute: "0"
+        hour: "2"
+        job: "find /var/log -type f -mtime +7 -delete"

@@ -1314,3 +1314,262 @@ REDHAT_SUPPORT_PRODUCT_VERSION="9.6"
 2026-01-23 12:48:39,230 p=30328 u=ec2-user n=ansible | changed: [target3]
 2026-01-23 12:48:39,231 p=30328 u=ec2-user n=ansible | PLAY RECAP *******************************************************************************************
 2026-01-23 12:48:39,231 p=30328 u=ec2-user n=ansible | target3                    : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-26 11:42:13,690 p=10814 u=ec2-user n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ec2-instance
+
+2026-01-26 11:42:13,691 p=10814 u=ec2-user n=ansible | [WARNING]: No hosts matched, nothing to do
+
+2026-01-26 11:45:00,125 p=11729 u=ec2-user n=ansible | target3 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-26 11:54:45,956 p=13949 u=ec2-user n=ansible | PLAY [deploying cron job] ******************************************************
+2026-01-26 11:54:45,965 p=13949 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 11:54:47,845 p=13949 u=ec2-user n=ansible | ok: [target3]
+2026-01-26 11:54:48,015 p=13949 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-01-26 11:54:48,247 p=13949 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 11:54:48,248 p=13949 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 11:54:48,253 p=13949 u=ec2-user n=ansible | TASK [scheduling log clean] ****************************************************
+2026-01-26 11:54:48,905 p=13949 u=ec2-user n=ansible | changed: [target3]
+2026-01-26 11:54:48,946 p=13949 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "msg": "Failed to find required executable \"crontab\" in paths: /home/ansible/.local/bin:/home/ansible/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin"}
+2026-01-26 11:54:48,953 p=13949 u=ec2-user n=ansible | fatal: [ubuntu-target]: FAILED! => {"changed": false, "msg": "Failed to find required executable \"crontab\" in paths: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"}
+2026-01-26 11:54:49,061 p=13949 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": false, "msg": "Failed to find required executable \"crontab\" in paths: /home/ansible/.local/bin:/home/ansible/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin"}
+2026-01-26 11:54:49,064 p=13949 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-01-26 11:54:49,065 p=13949 u=ec2-user n=ansible | target1                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-26 11:54:49,065 p=13949 u=ec2-user n=ansible | target2                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-26 11:54:49,065 p=13949 u=ec2-user n=ansible | target3                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-26 11:54:49,066 p=13949 u=ec2-user n=ansible | ubuntu-target              : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-26 12:01:49,345 p=16164 u=ec2-user n=ansible | PLAY [try installing a package not existed] ************************************
+2026-01-26 12:01:49,354 p=16164 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 12:01:50,975 p=16164 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-01-26 12:01:50,987 p=16164 u=ec2-user n=ansible | ok: [target3]
+2026-01-26 12:01:51,227 p=16164 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 12:01:51,259 p=16164 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 12:01:51,264 p=16164 u=ec2-user n=ansible | TASK [install package] *********************************************************
+2026-01-26 12:01:51,950 p=16164 u=ec2-user n=ansible | fatal: [ubuntu-target]: FAILED! => {"ansible_facts": {"pkg_mgr": "apt"}, "changed": false, "msg": ["Could not detect which major revision of yum is in use, which is required to determine module backend.", "You should manually specify use_backend to tell the module whether to use the yum (yum3) or dnf (yum4) backend})"]}
+2026-01-26 12:01:51,954 p=16164 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:01:54,644 p=16164 u=ec2-user n=ansible | fatal: [target3]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:01:54,645 p=16164 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:02:27,755 p=16164 u=ec2-user n=ansible |  [ERROR]: User interrupted execution
+
+2026-01-26 12:03:43,282 p=17221 u=ec2-user n=ansible | PLAY [try installing a package not existed] ************************************
+2026-01-26 12:03:43,298 p=17221 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 12:03:45,147 p=17221 u=ec2-user n=ansible | ok: [target3]
+2026-01-26 12:03:45,346 p=17221 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 12:03:45,390 p=17221 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-01-26 12:03:45,457 p=17221 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 12:03:45,462 p=17221 u=ec2-user n=ansible | TASK [install package] *********************************************************
+2026-01-26 12:03:46,188 p=17221 u=ec2-user n=ansible | fatal: [ubuntu-target]: FAILED! => {"ansible_facts": {"pkg_mgr": "apt"}, "changed": false, "msg": ["Could not detect which major revision of yum is in use, which is required to determine module backend.", "You should manually specify use_backend to tell the module whether to use the yum (yum3) or dnf (yum4) backend})"]}
+2026-01-26 12:03:46,191 p=17221 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:03:48,981 p=17221 u=ec2-user n=ansible | fatal: [target3]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:03:48,982 p=17221 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:04:19,302 p=17221 u=ec2-user n=ansible |  [ERROR]: User interrupted execution
+
+2026-01-26 12:04:22,638 p=18080 u=ec2-user n=ansible | PLAY [try installing a package not existed] ************************************
+2026-01-26 12:04:22,654 p=18080 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 12:04:24,119 p=18080 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 12:04:24,127 p=18080 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 12:04:24,132 p=18080 u=ec2-user n=ansible | TASK [install package] *********************************************************
+2026-01-26 12:04:30,098 p=18080 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:04:30,098 p=18080 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:04:31,081 p=18080 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:04:31,081 p=18080 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:04:31,082 p=18080 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-01-26 12:04:31,083 p=18080 u=ec2-user n=ansible | target1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:04:31,083 p=18080 u=ec2-user n=ansible | target2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:08:01,209 p=19376 u=ec2-user n=ansible | PLAY [try installing a package not existed] ************************************
+2026-01-26 12:08:01,217 p=19376 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 12:08:02,722 p=19376 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 12:08:02,723 p=19376 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 12:08:02,728 p=19376 u=ec2-user n=ansible | TASK [install package] *********************************************************
+2026-01-26 12:08:07,040 p=19376 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:08:07,041 p=19376 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:08:07,162 p=19376 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:08:07,162 p=19376 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:08:07,169 p=19376 u=ec2-user n=ansible | TASK [failed_when] *************************************************************
+2026-01-26 12:08:07,837 p=19376 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": true, "cmd": ["cat", "/etc/notexisted"], "delta": "0:00:00.006089", "end": "2026-01-26 06:38:07.758836", "msg": "non-zero return code", "rc": 1, "start": "2026-01-26 06:38:07.752747", "stderr": "cat: /etc/notexisted: No such file or directory", "stderr_lines": ["cat: /etc/notexisted: No such file or directory"], "stdout": "", "stdout_lines": []}
+2026-01-26 12:08:07,839 p=19376 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": true, "cmd": ["cat", "/etc/notexisted"], "delta": "0:00:00.005713", "end": "2026-01-26 06:38:07.761292", "msg": "non-zero return code", "rc": 1, "start": "2026-01-26 06:38:07.755579", "stderr": "cat: /etc/notexisted: No such file or directory", "stderr_lines": ["cat: /etc/notexisted: No such file or directory"], "stdout": "", "stdout_lines": []}
+2026-01-26 12:08:07,843 p=19376 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-01-26 12:08:07,843 p=19376 u=ec2-user n=ansible | target1                    : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:08:07,843 p=19376 u=ec2-user n=ansible | target2                    : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:08:17,056 p=20124 u=ec2-user n=ansible | PLAY [try installing a package not existed] ************************************
+2026-01-26 12:08:17,064 p=20124 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 12:08:18,440 p=20124 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 12:08:18,453 p=20124 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 12:08:18,457 p=20124 u=ec2-user n=ansible | TASK [install package] *********************************************************
+2026-01-26 12:08:22,919 p=20124 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:08:22,920 p=20124 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:08:23,310 p=20124 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:08:23,310 p=20124 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:08:23,316 p=20124 u=ec2-user n=ansible | TASK [failed_when] *************************************************************
+2026-01-26 12:08:23,956 p=20124 u=ec2-user n=ansible | changed: [target1]
+2026-01-26 12:08:23,957 p=20124 u=ec2-user n=ansible | changed: [target2]
+2026-01-26 12:08:23,959 p=20124 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-01-26 12:08:23,959 p=20124 u=ec2-user n=ansible | target1                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:08:23,959 p=20124 u=ec2-user n=ansible | target2                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:14:52,103 p=22428 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  but found another document
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/error_handling.yml': line 16, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+#using block, rescue and always
+---
+^ here
+
+2026-01-26 12:15:07,312 p=22518 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  but found another document
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/error_handling.yml': line 16, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+#using block, rescue and always
+---
+^ here
+
+2026-01-26 12:17:04,728 p=22968 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  but found another document
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/error_handling.yml': line 16, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+#using block, rescue and always
+---
+^ here
+
+2026-01-26 12:21:13,602 p=23889 u=ec2-user n=ansible | ERROR! conflicting action statements: yum, state
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/error_handling.yml': line 22, column 11, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      rescue:
+        - name: install httpd if nginx fails
+          ^ here
+
+2026-01-26 12:22:00,891 p=24066 u=ec2-user n=ansible | ERROR! conflicting action statements: yum, state
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/error_handling.yml': line 22, column 11, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      rescue:
+        - name: install httpd if nginx fails
+          ^ here
+
+2026-01-26 12:22:51,845 p=24272 u=ec2-user n=ansible | PLAY [try installing a package not existed] ************************************
+2026-01-26 12:22:51,852 p=24272 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 12:22:53,532 p=24272 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 12:22:53,556 p=24272 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 12:22:53,560 p=24272 u=ec2-user n=ansible | TASK [install package] *********************************************************
+2026-01-26 12:22:57,536 p=24272 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:22:57,537 p=24272 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:22:58,052 p=24272 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:22:58,052 p=24272 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:22:58,059 p=24272 u=ec2-user n=ansible | TASK [failed_when] *************************************************************
+2026-01-26 12:22:58,690 p=24272 u=ec2-user n=ansible | changed: [target2]
+2026-01-26 12:22:58,713 p=24272 u=ec2-user n=ansible | changed: [target1]
+2026-01-26 12:22:58,745 p=24272 u=ec2-user n=ansible | TASK [install nginx] ***********************************************************
+2026-01-26 12:23:04,314 p=24272 u=ec2-user n=ansible | changed: [target1]
+2026-01-26 12:23:04,742 p=24272 u=ec2-user n=ansible | changed: [target2]
+2026-01-26 12:23:04,747 p=24272 u=ec2-user n=ansible | TASK [Notify admin] ************************************************************
+2026-01-26 12:23:04,768 p=24272 u=ec2-user n=ansible | ok: [target1] => {
+    "msg": "installation attempted"
+}
+2026-01-26 12:23:04,776 p=24272 u=ec2-user n=ansible | ok: [target2] => {
+    "msg": "installation attempted"
+}
+2026-01-26 12:23:04,778 p=24272 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-01-26 12:23:04,778 p=24272 u=ec2-user n=ansible | target1                    : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:23:04,778 p=24272 u=ec2-user n=ansible | target2                    : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-01-30 12:35:42,777 p=14661 u=ec2-user n=ansible | {
+    "_meta": {
+        "hostvars": {
+            "target1": {
+                "ansible_host": "localhost",
+                "ansible_port": 2221,
+                "ansible_ssh_private_key_file": "/home/ec2-user/docker_key",
+                "ansible_user": "ansible"
+            },
+            "target2": {
+                "ansible_host": "localhost",
+                "ansible_port": 2222,
+                "ansible_ssh_private_key_file": "/home/ec2-user/docker_key",
+                "ansible_user": "ansible"
+            },
+            "target3": {
+                "ansible_host": "3.235.225.165",
+                "ansible_ssh_private_key_file": "/home/ec2-user/webserver-key.pem",
+                "ansible_user": "ec2-user"
+            },
+            "ubuntu-target": {
+                "ansible_host": "localhost",
+                "ansible_port": 2223,
+                "ansible_ssh_private_key_file": "/home/ec2-user/docker_key",
+                "ansible_user": "ansible"
+            }
+        }
+    },
+    "all": {
+        "children": [
+            "ungrouped",
+            "ec2_instance",
+            "containers"
+        ]
+    },
+    "containers": {
+        "children": [
+            "redhat_containers",
+            "ubuntu_containers"
+        ]
+    },
+    "ec2_instance": {
+        "hosts": [
+            "target3"
+        ]
+    },
+    "redhat_containers": {
+        "hosts": [
+            "target1",
+            "target2"
+        ]
+    },
+    "ubuntu_containers": {
+        "hosts": [
+            "ubuntu-target"
+        ]
+    }
+}
+2026-01-30 12:36:29,516 p=14874 u=ec2-user n=ansible | target1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-30 12:36:29,517 p=14874 u=ec2-user n=ansible | target2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}

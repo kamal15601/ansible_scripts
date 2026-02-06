@@ -42,5 +42,6 @@ find $backup_location -type f -name "*.gz" -mtime "$max_days" \
 if check_and_delete; then
     echo "log rotation is successful"
 else
-    echo "log rotation fialed"
+    echo "log rotation failed"
 fi
+
