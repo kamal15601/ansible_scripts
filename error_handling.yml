@@ -1,0 +1,32 @@
+- name: try installing a package not existed
+  hosts: redhat_containers
+  become: true
+  tasks:
+    - name: install package
+      yum: 
+        name: notexistedpackage
+        state: present
+      ignore_errors: true
+    - name: failed_when
+      command: cat /etc/notexisted
+      register: result
+      failed_when: "'no such file' in result.stderr"
+
+#using block, rescue and always
+    - block:
+        - name: install nginx
+          yum:
+            name: nginx
+            state: present
+      rescue:
+        - name: install httpd if nginx fails
+          yum:
+            name: httpd
+            state: present
+      always:
+        - name: Notify admin
+          debug:
+            msg: "installation attempted"
+
+#use when statement to perform some task based on return code
+#like when nginx_status.rc!=0

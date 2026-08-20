@@ -1,0 +1,38 @@
+---
+- name: Clean Real Output for df, fstab, nfs
+  hosts: ec2_instance
+  become: yes
+  gather_facts: no
+
+  tasks:
+
+    - name: Print header
+      debug:
+        msg: "===== {{ inventory_hostname }} ====="
+
+    - name: Run df -h
+      command: df -HT
+      register: df_out
+      changed_when: false
+
+    - name: Print df output clean
+      debug:
+        var: df_out.stdout
+
+    - name: Show /etc/fstab
+      command: cat /etc/fstab
+      register: fstab_out
+      changed_when: false
+
+    - name: Print fstab output clean
+      debug:
+        var: fstab_out.stdout
+
+    - name: Check NFS mounts
+      shell: mount | grep -i nfs || echo 'No NFS mounts found'
+      register: nfs_out
+      changed_when: false
+
+    - name: Print NFS output clean
+      debug:
+        var: nfs_out.stdout

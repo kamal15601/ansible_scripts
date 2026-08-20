@@ -1,0 +1,44 @@
+---
+- name: Validate df, fstab, and NFS mounts on RHEL systems
+  hosts: ec2_instance
+  become: yes
+  gather_facts: yes
+
+  tasks:
+
+    - name: Run df -h on RHEL
+      command: df -h
+      when: ansible_os_family == "RedHat"
+      register: df_out
+      changed_when: false
+
+    - debug:
+        msg:
+          - "===== DISK USAGE (df -h) ====="
+          - "{{ df_out.stdout_lines }}"
+      when: ansible_os_family == "RedHat"
+
+    - name: Show /etc/fstab on RHEL
+      command: cat /etc/fstab
+      when: ansible_os_family == "RedHat"
+      register: fstab_out
+      changed_when: false
+
+    - debug:
+        msg:
+          - "===== /etc/fstab CONTENT ====="
+          - "{{ fstab_out.stdout_lines }}"
+      when: ansible_os_family == "RedHat"
+
+    - name: Show active NFS mounts on RHEL
+      shell: mount | grep -i nfs
+      when: ansible_os_family == "RedHat"
+      register: nfs_out
+      ignore_errors: yes
+      changed_when: false
+
+    - debug:
+        msg:
+          - "===== ACTIVE NFS MOUNTS ====="
+          - "{{ nfs_out.stdout_lines | default(['No NFS mounts found']) }}"
+      when: ansible_os_family == "RedHat"

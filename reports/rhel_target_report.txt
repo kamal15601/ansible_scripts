@@ -1,0 +1,20 @@
+===== rhel_target =====
+
+--- DISK USAGE (df -HT) ---
+Filesystem     Type      Size  Used Avail Use% Mounted on
+devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev
+tmpfs          tmpfs     344M     0  344M   0% /dev/shm
+tmpfs          tmpfs     138M  5.7M  132M   5% /run
+efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars
+/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /
+/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot
+/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi
+tmpfs          tmpfs      69M     0   69M   0% /run/user/1000
+
+--- /etc/fstab CONTENT ---
+UUID=3cb71c94-5a97-4499-9c55-c02dd709530f	/	xfs	defaults	0	0
+UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb	/boot	xfs	defaults	0	0
+UUID=FB6C-ED3F	/boot/efi	vfat	defaults,uid=0,gid=0,umask=077,shortname=winnt	0	2
+
+--- ACTIVE NFS/CIFS MOUNTS ---
+No NFS/CIFS mounts found

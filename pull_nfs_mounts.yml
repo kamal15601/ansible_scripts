@@ -1,0 +1,66 @@
+---
+- name: Validate df, fstab, and NFS mounts on RHEL systems
+  hosts: ec2_instance
+  become: yes
+  gather_facts: yes
+
+  tasks:
+
+    - name: Run df -h on RHEL
+      command: df -HT
+      when: ansible_os_family == "RedHat"
+      register: df_out
+      changed_when: false
+
+    - debug:
+        msg:
+          - "===== {{ inventory_hostname }} : DISK USAGE (df -HT) ====="
+          - "{{ df_out.stdout_lines }}"
+      when: ansible_os_family == "RedHat"
+
+    - name: Show /etc/fstab on RHEL
+      command: cat /etc/fstab
+      when: ansible_os_family == "RedHat"
+      register: fstab_out
+      changed_when: false
+
+    - debug:
+        msg:
+          - "===== {{ inventory_hostname }} : /etc/fstab CONTENT ====="
+          - "{{ fstab_out.stdout_lines }}"
+      when: ansible_os_family == "RedHat"
+
+    - name: Show active NFS mounts on RHEL
+      shell: mount | egrep -i "nfs|cifs"
+      when: ansible_os_family == "RedHat"
+      register: nfs_out
+      ignore_errors: yes
+      changed_when: false
+
+    - debug:
+        msg:
+          - "===== {{ inventory_hostname }} : ACTIVE NFS MOUNTS ====="
+          - "{{ nfs_out.stdout_lines | default(['No NFS mounts found']) }}"
+      when: ansible_os_family == "RedHat"
+
+    - name: Build final clean report content
+      set_fact:
+        final_report: |
+          ===== {{ inventory_hostname }} =====
+
+          --- DISK USAGE (df -HT) ---
+          {{ df_out.stdout }}
+          --- /etc/fstab CONTENT ---
+          {{ fstab_out.stdout }}
+
+           --- ACTIVE NFS/CIFS MOUNTS ---
+           {{ nfs_out.stdout }}
+
+
+    
+    - name: Write report to LOCAL controller machine
+      delegate_to: localhost
+      copy:
+        content: "{{ final_report }}"
+        dest: "/home/ec2-user/scripts/ansible_sc/reports/{{ inventory_hostname }}_report.txt"
+

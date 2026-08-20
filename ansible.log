@@ -1301,3 +1301,1384 @@ REDHAT_BUGZILLA_PRODUCT_VERSION=9.6
 REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
 REDHAT_SUPPORT_PRODUCT_VERSION="9.6"
 
+2026-01-23 12:48:30,649 p=30328 u=ec2-user n=ansible | PLAY [deleting_service in remote server] *************************************************************
+2026-01-23 12:48:30,658 p=30328 u=ec2-user n=ansible | TASK [Gathering Facts] *******************************************************************************
+2026-01-23 12:48:32,777 p=30328 u=ec2-user n=ansible | ok: [target3]
+2026-01-23 12:48:32,783 p=30328 u=ec2-user n=ansible | TASK [stop the servce if it is running] **************************************************************
+2026-01-23 12:48:33,656 p=30328 u=ec2-user n=ansible | ok: [target3]
+2026-01-23 12:48:33,661 p=30328 u=ec2-user n=ansible | TASK [delete_service] ********************************************************************************
+2026-01-23 12:48:38,166 p=30328 u=ec2-user n=ansible | changed: [target3]
+2026-01-23 12:48:38,171 p=30328 u=ec2-user n=ansible | TASK [remove config files if any] ********************************************************************
+2026-01-23 12:48:38,794 p=30328 u=ec2-user n=ansible | changed: [target3]
+2026-01-23 12:48:38,826 p=30328 u=ec2-user n=ansible | TASK [remove log files if any] ***********************************************************************
+2026-01-23 12:48:39,230 p=30328 u=ec2-user n=ansible | changed: [target3]
+2026-01-23 12:48:39,231 p=30328 u=ec2-user n=ansible | PLAY RECAP *******************************************************************************************
+2026-01-23 12:48:39,231 p=30328 u=ec2-user n=ansible | target3                    : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-26 11:42:13,690 p=10814 u=ec2-user n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ec2-instance
+
+2026-01-26 11:42:13,691 p=10814 u=ec2-user n=ansible | [WARNING]: No hosts matched, nothing to do
+
+2026-01-26 11:45:00,125 p=11729 u=ec2-user n=ansible | target3 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-26 11:54:45,956 p=13949 u=ec2-user n=ansible | PLAY [deploying cron job] ******************************************************
+2026-01-26 11:54:45,965 p=13949 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 11:54:47,845 p=13949 u=ec2-user n=ansible | ok: [target3]
+2026-01-26 11:54:48,015 p=13949 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-01-26 11:54:48,247 p=13949 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 11:54:48,248 p=13949 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 11:54:48,253 p=13949 u=ec2-user n=ansible | TASK [scheduling log clean] ****************************************************
+2026-01-26 11:54:48,905 p=13949 u=ec2-user n=ansible | changed: [target3]
+2026-01-26 11:54:48,946 p=13949 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "msg": "Failed to find required executable \"crontab\" in paths: /home/ansible/.local/bin:/home/ansible/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin"}
+2026-01-26 11:54:48,953 p=13949 u=ec2-user n=ansible | fatal: [ubuntu-target]: FAILED! => {"changed": false, "msg": "Failed to find required executable \"crontab\" in paths: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"}
+2026-01-26 11:54:49,061 p=13949 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": false, "msg": "Failed to find required executable \"crontab\" in paths: /home/ansible/.local/bin:/home/ansible/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin"}
+2026-01-26 11:54:49,064 p=13949 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-01-26 11:54:49,065 p=13949 u=ec2-user n=ansible | target1                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-26 11:54:49,065 p=13949 u=ec2-user n=ansible | target2                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-26 11:54:49,065 p=13949 u=ec2-user n=ansible | target3                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-01-26 11:54:49,066 p=13949 u=ec2-user n=ansible | ubuntu-target              : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-01-26 12:01:49,345 p=16164 u=ec2-user n=ansible | PLAY [try installing a package not existed] ************************************
+2026-01-26 12:01:49,354 p=16164 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 12:01:50,975 p=16164 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-01-26 12:01:50,987 p=16164 u=ec2-user n=ansible | ok: [target3]
+2026-01-26 12:01:51,227 p=16164 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 12:01:51,259 p=16164 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 12:01:51,264 p=16164 u=ec2-user n=ansible | TASK [install package] *********************************************************
+2026-01-26 12:01:51,950 p=16164 u=ec2-user n=ansible | fatal: [ubuntu-target]: FAILED! => {"ansible_facts": {"pkg_mgr": "apt"}, "changed": false, "msg": ["Could not detect which major revision of yum is in use, which is required to determine module backend.", "You should manually specify use_backend to tell the module whether to use the yum (yum3) or dnf (yum4) backend})"]}
+2026-01-26 12:01:51,954 p=16164 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:01:54,644 p=16164 u=ec2-user n=ansible | fatal: [target3]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:01:54,645 p=16164 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:02:27,755 p=16164 u=ec2-user n=ansible |  [ERROR]: User interrupted execution
+
+2026-01-26 12:03:43,282 p=17221 u=ec2-user n=ansible | PLAY [try installing a package not existed] ************************************
+2026-01-26 12:03:43,298 p=17221 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 12:03:45,147 p=17221 u=ec2-user n=ansible | ok: [target3]
+2026-01-26 12:03:45,346 p=17221 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 12:03:45,390 p=17221 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-01-26 12:03:45,457 p=17221 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 12:03:45,462 p=17221 u=ec2-user n=ansible | TASK [install package] *********************************************************
+2026-01-26 12:03:46,188 p=17221 u=ec2-user n=ansible | fatal: [ubuntu-target]: FAILED! => {"ansible_facts": {"pkg_mgr": "apt"}, "changed": false, "msg": ["Could not detect which major revision of yum is in use, which is required to determine module backend.", "You should manually specify use_backend to tell the module whether to use the yum (yum3) or dnf (yum4) backend})"]}
+2026-01-26 12:03:46,191 p=17221 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:03:48,981 p=17221 u=ec2-user n=ansible | fatal: [target3]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:03:48,982 p=17221 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:04:19,302 p=17221 u=ec2-user n=ansible |  [ERROR]: User interrupted execution
+
+2026-01-26 12:04:22,638 p=18080 u=ec2-user n=ansible | PLAY [try installing a package not existed] ************************************
+2026-01-26 12:04:22,654 p=18080 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 12:04:24,119 p=18080 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 12:04:24,127 p=18080 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 12:04:24,132 p=18080 u=ec2-user n=ansible | TASK [install package] *********************************************************
+2026-01-26 12:04:30,098 p=18080 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:04:30,098 p=18080 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:04:31,081 p=18080 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:04:31,081 p=18080 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:04:31,082 p=18080 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-01-26 12:04:31,083 p=18080 u=ec2-user n=ansible | target1                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:04:31,083 p=18080 u=ec2-user n=ansible | target2                    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:08:01,209 p=19376 u=ec2-user n=ansible | PLAY [try installing a package not existed] ************************************
+2026-01-26 12:08:01,217 p=19376 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 12:08:02,722 p=19376 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 12:08:02,723 p=19376 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 12:08:02,728 p=19376 u=ec2-user n=ansible | TASK [install package] *********************************************************
+2026-01-26 12:08:07,040 p=19376 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:08:07,041 p=19376 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:08:07,162 p=19376 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:08:07,162 p=19376 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:08:07,169 p=19376 u=ec2-user n=ansible | TASK [failed_when] *************************************************************
+2026-01-26 12:08:07,837 p=19376 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": true, "cmd": ["cat", "/etc/notexisted"], "delta": "0:00:00.006089", "end": "2026-01-26 06:38:07.758836", "msg": "non-zero return code", "rc": 1, "start": "2026-01-26 06:38:07.752747", "stderr": "cat: /etc/notexisted: No such file or directory", "stderr_lines": ["cat: /etc/notexisted: No such file or directory"], "stdout": "", "stdout_lines": []}
+2026-01-26 12:08:07,839 p=19376 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": true, "cmd": ["cat", "/etc/notexisted"], "delta": "0:00:00.005713", "end": "2026-01-26 06:38:07.761292", "msg": "non-zero return code", "rc": 1, "start": "2026-01-26 06:38:07.755579", "stderr": "cat: /etc/notexisted: No such file or directory", "stderr_lines": ["cat: /etc/notexisted: No such file or directory"], "stdout": "", "stdout_lines": []}
+2026-01-26 12:08:07,843 p=19376 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-01-26 12:08:07,843 p=19376 u=ec2-user n=ansible | target1                    : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:08:07,843 p=19376 u=ec2-user n=ansible | target2                    : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:08:17,056 p=20124 u=ec2-user n=ansible | PLAY [try installing a package not existed] ************************************
+2026-01-26 12:08:17,064 p=20124 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 12:08:18,440 p=20124 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 12:08:18,453 p=20124 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 12:08:18,457 p=20124 u=ec2-user n=ansible | TASK [install package] *********************************************************
+2026-01-26 12:08:22,919 p=20124 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:08:22,920 p=20124 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:08:23,310 p=20124 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:08:23,310 p=20124 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:08:23,316 p=20124 u=ec2-user n=ansible | TASK [failed_when] *************************************************************
+2026-01-26 12:08:23,956 p=20124 u=ec2-user n=ansible | changed: [target1]
+2026-01-26 12:08:23,957 p=20124 u=ec2-user n=ansible | changed: [target2]
+2026-01-26 12:08:23,959 p=20124 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-01-26 12:08:23,959 p=20124 u=ec2-user n=ansible | target1                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:08:23,959 p=20124 u=ec2-user n=ansible | target2                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:14:52,103 p=22428 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  but found another document
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/error_handling.yml': line 16, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+#using block, rescue and always
+---
+^ here
+
+2026-01-26 12:15:07,312 p=22518 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  but found another document
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/error_handling.yml': line 16, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+#using block, rescue and always
+---
+^ here
+
+2026-01-26 12:17:04,728 p=22968 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  but found another document
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/error_handling.yml': line 16, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+#using block, rescue and always
+---
+^ here
+
+2026-01-26 12:21:13,602 p=23889 u=ec2-user n=ansible | ERROR! conflicting action statements: yum, state
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/error_handling.yml': line 22, column 11, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      rescue:
+        - name: install httpd if nginx fails
+          ^ here
+
+2026-01-26 12:22:00,891 p=24066 u=ec2-user n=ansible | ERROR! conflicting action statements: yum, state
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/error_handling.yml': line 22, column 11, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      rescue:
+        - name: install httpd if nginx fails
+          ^ here
+
+2026-01-26 12:22:51,845 p=24272 u=ec2-user n=ansible | PLAY [try installing a package not existed] ************************************
+2026-01-26 12:22:51,852 p=24272 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-01-26 12:22:53,532 p=24272 u=ec2-user n=ansible | ok: [target2]
+2026-01-26 12:22:53,556 p=24272 u=ec2-user n=ansible | ok: [target1]
+2026-01-26 12:22:53,560 p=24272 u=ec2-user n=ansible | TASK [install package] *********************************************************
+2026-01-26 12:22:57,536 p=24272 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:22:57,537 p=24272 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:22:58,052 p=24272 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "failures": ["No package notexistedpackage available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-01-26 12:22:58,052 p=24272 u=ec2-user n=ansible | ...ignoring
+2026-01-26 12:22:58,059 p=24272 u=ec2-user n=ansible | TASK [failed_when] *************************************************************
+2026-01-26 12:22:58,690 p=24272 u=ec2-user n=ansible | changed: [target2]
+2026-01-26 12:22:58,713 p=24272 u=ec2-user n=ansible | changed: [target1]
+2026-01-26 12:22:58,745 p=24272 u=ec2-user n=ansible | TASK [install nginx] ***********************************************************
+2026-01-26 12:23:04,314 p=24272 u=ec2-user n=ansible | changed: [target1]
+2026-01-26 12:23:04,742 p=24272 u=ec2-user n=ansible | changed: [target2]
+2026-01-26 12:23:04,747 p=24272 u=ec2-user n=ansible | TASK [Notify admin] ************************************************************
+2026-01-26 12:23:04,768 p=24272 u=ec2-user n=ansible | ok: [target1] => {
+    "msg": "installation attempted"
+}
+2026-01-26 12:23:04,776 p=24272 u=ec2-user n=ansible | ok: [target2] => {
+    "msg": "installation attempted"
+}
+2026-01-26 12:23:04,778 p=24272 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-01-26 12:23:04,778 p=24272 u=ec2-user n=ansible | target1                    : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-01-26 12:23:04,778 p=24272 u=ec2-user n=ansible | target2                    : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-01-30 12:35:42,777 p=14661 u=ec2-user n=ansible | {
+    "_meta": {
+        "hostvars": {
+            "target1": {
+                "ansible_host": "localhost",
+                "ansible_port": 2221,
+                "ansible_ssh_private_key_file": "/home/ec2-user/docker_key",
+                "ansible_user": "ansible"
+            },
+            "target2": {
+                "ansible_host": "localhost",
+                "ansible_port": 2222,
+                "ansible_ssh_private_key_file": "/home/ec2-user/docker_key",
+                "ansible_user": "ansible"
+            },
+            "target3": {
+                "ansible_host": "3.235.225.165",
+                "ansible_ssh_private_key_file": "/home/ec2-user/webserver-key.pem",
+                "ansible_user": "ec2-user"
+            },
+            "ubuntu-target": {
+                "ansible_host": "localhost",
+                "ansible_port": 2223,
+                "ansible_ssh_private_key_file": "/home/ec2-user/docker_key",
+                "ansible_user": "ansible"
+            }
+        }
+    },
+    "all": {
+        "children": [
+            "ungrouped",
+            "ec2_instance",
+            "containers"
+        ]
+    },
+    "containers": {
+        "children": [
+            "redhat_containers",
+            "ubuntu_containers"
+        ]
+    },
+    "ec2_instance": {
+        "hosts": [
+            "target3"
+        ]
+    },
+    "redhat_containers": {
+        "hosts": [
+            "target1",
+            "target2"
+        ]
+    },
+    "ubuntu_containers": {
+        "hosts": [
+            "ubuntu-target"
+        ]
+    }
+}
+2026-01-30 12:36:29,516 p=14874 u=ec2-user n=ansible | target1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-01-30 12:36:29,517 p=14874 u=ec2-user n=ansible | target2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-03-19 13:00:54,228 p=8054 u=ec2-user n=ansible | ubuntu-target | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-03-19 13:00:54,433 p=8054 u=ec2-user n=ansible | target1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-03-19 13:00:54,434 p=8054 u=ec2-user n=ansible | target2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-03-19 13:01:17,231 p=8054 u=ec2-user n=ansible | target3 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-03-19 13:02:55,822 p=8390 u=ec2-user n=ansible | target3 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-03-19 13:02:55,851 p=8390 u=ec2-user n=ansible | ubuntu-target | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-03-19 13:02:55,878 p=8390 u=ec2-user n=ansible | target2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-03-19 13:02:55,952 p=8390 u=ec2-user n=ansible | target1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-03-19 13:03:40,844 p=8695 u=ec2-user n=ansible | rhel_target | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-03-19 13:03:40,890 p=8695 u=ec2-user n=ansible | ubuntu-target | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-03-19 13:03:41,040 p=8695 u=ec2-user n=ansible | target2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-03-19 13:03:41,046 p=8695 u=ec2-user n=ansible | target1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-03-19 13:04:59,838 p=8979 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] ********************************************************************************************************************************************************
+2026-03-19 13:04:59,847 p=8979 u=ec2-user n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+2026-03-19 13:05:01,725 p=8979 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 13:05:01,733 p=8979 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *****************************************************************************************************************************************************************************************
+2026-03-19 13:05:02,352 p=8979 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 13:05:02,357 p=8979 u=ec2-user n=ansible | TASK [debug] *****************************************************************************************************************************************************************************************************
+2026-03-19 13:05:02,405 p=8979 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== DISK USAGE (df -h) =====",
+        [
+            "Filesystem      Size  Used Avail Use% Mounted on",
+            "devtmpfs        4.0M     0  4.0M   0% /dev",
+            "tmpfs           328M     0  328M   0% /dev/shm",
+            "tmpfs           131M  2.7M  129M   3% /run",
+            "efivarfs        128K  3.3K  125K   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3  8.8G  2.3G  6.6G  26% /",
+            "/dev/nvme0n1p2  960M  276M  685M  29% /boot",
+            "/dev/nvme0n1p1  200M  7.3M  193M   4% /boot/efi",
+            "tmpfs            66M     0   66M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-19 13:05:02,437 p=8979 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] ***********************************************************************************************************************************************************************************
+2026-03-19 13:05:02,836 p=8979 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 13:05:02,841 p=8979 u=ec2-user n=ansible | TASK [debug] *****************************************************************************************************************************************************************************************************
+2026-03-19 13:05:02,858 p=8979 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-19 13:05:02,864 p=8979 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ****************************************************************************************************************************************************************************
+2026-03-19 13:05:03,273 p=8979 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | grep -i nfs", "delta": "0:00:00.007434", "end": "2026-03-19 07:35:03.218521", "msg": "non-zero return code", "rc": 1, "start": "2026-03-19 07:35:03.211087", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-19 13:05:03,273 p=8979 u=ec2-user n=ansible | ...ignoring
+2026-03-19 13:05:03,278 p=8979 u=ec2-user n=ansible | TASK [debug] *****************************************************************************************************************************************************************************************************
+2026-03-19 13:05:03,316 p=8979 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-19 13:05:03,318 p=8979 u=ec2-user n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2026-03-19 13:05:03,318 p=8979 u=ec2-user n=ansible | rhel_target                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-03-19 13:10:09,387 p=9063 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] ********************************************************************************************************************************************************
+2026-03-19 13:10:09,395 p=9063 u=ec2-user n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+2026-03-19 13:10:10,955 p=9063 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 13:10:10,962 p=9063 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *****************************************************************************************************************************************************************************************
+2026-03-19 13:10:11,538 p=9063 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 13:10:11,543 p=9063 u=ec2-user n=ansible | TASK [debug] *****************************************************************************************************************************************************************************************************
+2026-03-19 13:10:11,591 p=9063 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== DISK USAGE (df -h) =====",
+        [
+            "Filesystem      Size  Used Avail Use% Mounted on",
+            "devtmpfs        4.0M     0  4.0M   0% /dev",
+            "tmpfs           328M     0  328M   0% /dev/shm",
+            "tmpfs           131M  2.7M  129M   3% /run",
+            "efivarfs        128K  3.3K  125K   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3  8.8G  2.3G  6.6G  26% /",
+            "/dev/nvme0n1p2  960M  276M  685M  29% /boot",
+            "/dev/nvme0n1p1  200M  7.3M  193M   4% /boot/efi",
+            "tmpfs            66M     0   66M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-19 13:10:11,631 p=9063 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] ***********************************************************************************************************************************************************************************
+2026-03-19 13:10:13,045 p=9063 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 13:10:13,050 p=9063 u=ec2-user n=ansible | TASK [debug] *****************************************************************************************************************************************************************************************************
+2026-03-19 13:10:13,067 p=9063 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-19 13:10:13,071 p=9063 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ****************************************************************************************************************************************************************************
+2026-03-19 13:10:13,482 p=9063 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 13:10:13,487 p=9063 u=ec2-user n=ansible | TASK [debug] *****************************************************************************************************************************************************************************************************
+2026-03-19 13:10:13,517 p=9063 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== ACTIVE NFS MOUNTS =====",
+        [
+            "/dev/nvme0n1p1 on /boot/efi type vfat (rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=ascii,shortname=winnt,errors=remount-ro)"
+        ]
+    ]
+}
+2026-03-19 13:10:13,518 p=9063 u=ec2-user n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2026-03-19 13:10:13,518 p=9063 u=ec2-user n=ansible | rhel_target                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-03-19 13:12:50,312 p=9114 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] ********************************************************************************************************************************************************
+2026-03-19 13:12:50,320 p=9114 u=ec2-user n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+2026-03-19 13:12:51,784 p=9114 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 13:12:51,790 p=9114 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *****************************************************************************************************************************************************************************************
+2026-03-19 13:12:52,342 p=9114 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 13:12:52,347 p=9114 u=ec2-user n=ansible | TASK [debug] *****************************************************************************************************************************************************************************************************
+2026-03-19 13:12:52,396 p=9114 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== DISK USAGE (df -h) =====",
+        [
+            "Filesystem      Size  Used Avail Use% Mounted on",
+            "devtmpfs        4.0M     0  4.0M   0% /dev",
+            "tmpfs           328M     0  328M   0% /dev/shm",
+            "tmpfs           131M  2.7M  129M   3% /run",
+            "efivarfs        128K  3.3K  125K   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3  8.8G  2.3G  6.6G  26% /",
+            "/dev/nvme0n1p2  960M  276M  685M  29% /boot",
+            "/dev/nvme0n1p1  200M  7.3M  193M   4% /boot/efi",
+            "tmpfs            66M     0   66M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-19 13:12:52,430 p=9114 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] ***********************************************************************************************************************************************************************************
+2026-03-19 13:12:53,832 p=9114 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 13:12:53,837 p=9114 u=ec2-user n=ansible | TASK [debug] *****************************************************************************************************************************************************************************************************
+2026-03-19 13:12:53,854 p=9114 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-19 13:12:53,859 p=9114 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ****************************************************************************************************************************************************************************
+2026-03-19 13:12:54,268 p=9114 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | grep -i nfs", "delta": "0:00:00.006222", "end": "2026-03-19 07:42:54.211814", "msg": "non-zero return code", "rc": 1, "start": "2026-03-19 07:42:54.205592", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-19 13:12:54,268 p=9114 u=ec2-user n=ansible | ...ignoring
+2026-03-19 13:12:54,273 p=9114 u=ec2-user n=ansible | TASK [debug] *****************************************************************************************************************************************************************************************************
+2026-03-19 13:12:54,303 p=9114 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-19 13:12:54,305 p=9114 u=ec2-user n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2026-03-19 13:12:54,305 p=9114 u=ec2-user n=ansible | rhel_target                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-03-19 14:15:14,471 p=9643 u=ec2-user n=ansible | ERROR! conflicting action statements: debug, verbosity
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/clean_df_output.yml': line 9, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Print Server Header
+      ^ here
+
+2026-03-19 14:20:41,281 p=9673 u=ec2-user n=ansible | ERROR! conflicting action statements: debug, verbosity
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/clean_df_output.yml': line 9, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Print Server Header
+      ^ here
+
+2026-03-19 14:23:55,788 p=9727 u=ec2-user n=ansible | PLAY [Clean Real Output (Just like manual SSH)] ************************************************************************************************************
+2026-03-19 14:23:55,797 p=9727 u=ec2-user n=ansible | TASK [Print server header] *********************************************************************************************************************************
+2026-03-19 14:23:55,823 p=9727 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": "===== rhel_target ====="
+}
+2026-03-19 14:23:55,832 p=9727 u=ec2-user n=ansible | ok: [target1] => {
+    "msg": "===== target1 ====="
+}
+2026-03-19 14:23:55,839 p=9727 u=ec2-user n=ansible | ok: [ubuntu-target] => {
+    "msg": "===== ubuntu-target ====="
+}
+2026-03-19 14:23:55,839 p=9727 u=ec2-user n=ansible | ok: [target2] => {
+    "msg": "===== target2 ====="
+}
+2026-03-19 14:23:55,841 p=9727 u=ec2-user n=ansible | TASK [Run df -h] *******************************************************************************************************************************************
+2026-03-19 14:23:56,885 p=9727 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-03-19 14:23:56,919 p=9727 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 14:23:57,022 p=9727 u=ec2-user n=ansible | ok: [target1]
+2026-03-19 14:23:57,028 p=9727 u=ec2-user n=ansible | ok: [target2]
+2026-03-19 14:23:57,030 p=9727 u=ec2-user n=ansible | TASK [Print df -h output] **********************************************************************************************************************************
+2026-03-19 14:23:57,066 p=9727 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": "Filesystem      Size  Used Avail Use% Mounted on\ndevtmpfs        4.0M     0  4.0M   0% /dev\ntmpfs           328M     0  328M   0% /dev/shm\ntmpfs           131M  2.7M  129M   3% /run\nefivarfs        128K  3.3K  125K   3% /sys/firmware/efi/efivars\n/dev/nvme0n1p3  8.8G  2.3G  6.6G  26% /\n/dev/nvme0n1p2  960M  276M  685M  29% /boot\n/dev/nvme0n1p1  200M  7.3M  193M   4% /boot/efi\ntmpfs            66M     0   66M   0% /run/user/1000"
+}
+2026-03-19 14:23:57,066 p=9727 u=ec2-user n=ansible | ok: [target1] => {
+    "msg": "Filesystem      Size  Used Avail Use% Mounted on\noverlay          25G   16G  9.2G  63% /\ntmpfs            64M     0   64M   0% /dev\nshm              64M     0   64M   0% /dev/shm\n/dev/nvme0n1p2   25G   16G  9.2G  63% /etc/hosts\ntmpfs           792M     0  792M   0% /proc/acpi\ntmpfs           792M     0  792M   0% /proc/scsi\ntmpfs           792M     0  792M   0% /sys/firmware"
+}
+2026-03-19 14:23:57,068 p=9727 u=ec2-user n=ansible | ok: [target2] => {
+    "msg": "Filesystem      Size  Used Avail Use% Mounted on\noverlay          25G   16G  9.2G  63% /\ntmpfs            64M     0   64M   0% /dev\nshm              64M     0   64M   0% /dev/shm\n/dev/nvme0n1p2   25G   16G  9.2G  63% /etc/hosts\ntmpfs           792M     0  792M   0% /proc/acpi\ntmpfs           792M     0  792M   0% /proc/scsi\ntmpfs           792M     0  792M   0% /sys/firmware"
+}
+2026-03-19 14:23:57,073 p=9727 u=ec2-user n=ansible | ok: [ubuntu-target] => {
+    "msg": "Filesystem      Size  Used Avail Use% Mounted on\noverlay          25G   16G  9.2G  63% /\ntmpfs            64M     0   64M   0% /dev\nshm              64M     0   64M   0% /dev/shm\n/dev/nvme0n1p2   25G   16G  9.2G  63% /etc/hosts\ntmpfs           792M     0  792M   0% /proc/acpi\ntmpfs           792M     0  792M   0% /proc/scsi\ntmpfs           792M     0  792M   0% /sys/firmware"
+}
+2026-03-19 14:23:57,075 p=9727 u=ec2-user n=ansible | TASK [Show /etc/fstab] *************************************************************************************************************************************
+2026-03-19 14:23:57,647 p=9727 u=ec2-user n=ansible | fatal: [target2]: FAILED! => {"changed": false, "cmd": ["cat", "/etc/fstab"], "delta": "0:00:00.007640", "end": "2026-03-19 08:53:57.558185", "msg": "non-zero return code", "rc": 1, "start": "2026-03-19 08:53:57.550545", "stderr": "cat: /etc/fstab: No such file or directory", "stderr_lines": ["cat: /etc/fstab: No such file or directory"], "stdout": "", "stdout_lines": []}
+2026-03-19 14:23:57,690 p=9727 u=ec2-user n=ansible | fatal: [target1]: FAILED! => {"changed": false, "cmd": ["cat", "/etc/fstab"], "delta": "0:00:00.004636", "end": "2026-03-19 08:53:57.627944", "msg": "non-zero return code", "rc": 1, "start": "2026-03-19 08:53:57.623308", "stderr": "cat: /etc/fstab: No such file or directory", "stderr_lines": ["cat: /etc/fstab: No such file or directory"], "stdout": "", "stdout_lines": []}
+2026-03-19 14:23:57,711 p=9727 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-03-19 14:23:58,568 p=9727 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 14:23:58,570 p=9727 u=ec2-user n=ansible | TASK [Print fstab output] **********************************************************************************************************************************
+2026-03-19 14:23:58,587 p=9727 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0\nUUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0\nUUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+}
+2026-03-19 14:23:58,595 p=9727 u=ec2-user n=ansible | ok: [ubuntu-target] => {
+    "msg": "# UNCONFIGURED FSTAB FOR BASE SYSTEM"
+}
+2026-03-19 14:23:58,597 p=9727 u=ec2-user n=ansible | TASK [Check NFS mounts] ************************************************************************************************************************************
+2026-03-19 14:23:58,895 p=9727 u=ec2-user n=ansible | ok: [ubuntu-target]
+2026-03-19 14:23:59,009 p=9727 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 14:23:59,011 p=9727 u=ec2-user n=ansible | TASK [Print NFS output] ************************************************************************************************************************************
+2026-03-19 14:23:59,027 p=9727 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": "No NFS mounts found"
+}
+2026-03-19 14:23:59,034 p=9727 u=ec2-user n=ansible | ok: [ubuntu-target] => {
+    "msg": "No NFS mounts found"
+}
+2026-03-19 14:23:59,036 p=9727 u=ec2-user n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2026-03-19 14:23:59,036 p=9727 u=ec2-user n=ansible | rhel_target                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-03-19 14:23:59,036 p=9727 u=ec2-user n=ansible | target1                    : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-03-19 14:23:59,036 p=9727 u=ec2-user n=ansible | target2                    : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-03-19 14:23:59,036 p=9727 u=ec2-user n=ansible | ubuntu-target              : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-03-19 14:29:18,034 p=10358 u=ec2-user n=ansible | PLAY [Clean Real Output for df, fstab, nfs] ****************************************************************************************************************
+2026-03-19 14:29:18,042 p=10358 u=ec2-user n=ansible | TASK [Print header] ****************************************************************************************************************************************
+2026-03-19 14:29:18,058 p=10358 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": "===== rhel_target ====="
+}
+2026-03-19 14:29:18,060 p=10358 u=ec2-user n=ansible | TASK [Run df -h] *******************************************************************************************************************************************
+2026-03-19 14:29:19,139 p=10358 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 14:29:19,140 p=10358 u=ec2-user n=ansible | TASK [Print df output clean] *******************************************************************************************************************************
+2026-03-19 14:29:19,156 p=10358 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "df_out.stdout": "Filesystem     Type      Size  Used Avail Use% Mounted on\ndevtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev\ntmpfs          tmpfs     344M     0  344M   0% /dev/shm\ntmpfs          tmpfs     138M  3.5M  134M   3% /run\nefivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars\n/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /\n/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot\n/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi\ntmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+}
+2026-03-19 14:29:19,158 p=10358 u=ec2-user n=ansible | TASK [Show /etc/fstab] *************************************************************************************************************************************
+2026-03-19 14:29:19,555 p=10358 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 14:29:19,557 p=10358 u=ec2-user n=ansible | TASK [Print fstab output clean] ****************************************************************************************************************************
+2026-03-19 14:29:19,572 p=10358 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "fstab_out.stdout": "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0\nUUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0\nUUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+}
+2026-03-19 14:29:19,575 p=10358 u=ec2-user n=ansible | TASK [Check NFS mounts] ************************************************************************************************************************************
+2026-03-19 14:29:19,978 p=10358 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 14:29:19,979 p=10358 u=ec2-user n=ansible | TASK [Print NFS output clean] ******************************************************************************************************************************
+2026-03-19 14:29:19,994 p=10358 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "nfs_out.stdout": "No NFS mounts found"
+}
+2026-03-19 14:29:19,995 p=10358 u=ec2-user n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2026-03-19 14:29:19,995 p=10358 u=ec2-user n=ansible | rhel_target                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-03-19 15:09:13,735 p=10727 u=ec2-user n=ansible | ERROR! the playbook: pull_nfs_mount.yml could not be found
+2026-03-19 15:09:21,480 p=10731 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************************************************************************************
+2026-03-19 15:09:21,488 p=10731 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************
+2026-03-19 15:09:23,313 p=10731 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:09:23,320 p=10731 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************************************************************************************
+2026-03-19 15:09:24,881 p=10731 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:09:24,886 p=10731 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-19 15:09:24,933 p=10731 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== DISK USAGE (df -h) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev",
+            "tmpfs          tmpfs     344M     0  344M   0% /dev/shm",
+            "tmpfs          tmpfs     138M  3.5M  134M   3% /run",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /",
+            "/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot",
+            "/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi",
+            "tmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-19 15:09:24,965 p=10731 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************************************************************************************
+2026-03-19 15:09:25,423 p=10731 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:09:25,427 p=10731 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-19 15:09:25,444 p=10731 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-19 15:09:25,449 p=10731 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************************************************************************************
+2026-03-19 15:09:25,860 p=10731 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | egrep -i \"nfs|cifs\"", "delta": "0:00:00.007941", "end": "2026-03-19 09:39:25.804388", "msg": "non-zero return code", "rc": 1, "start": "2026-03-19 09:39:25.796447", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-19 15:09:25,861 p=10731 u=ec2-user n=ansible | ...ignoring
+2026-03-19 15:09:25,865 p=10731 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-19 15:09:25,895 p=10731 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-19 15:09:25,896 p=10731 u=ec2-user n=ansible | PLAY RECAP *********************************************************************************************************************************************
+2026-03-19 15:09:25,896 p=10731 u=ec2-user n=ansible | rhel_target                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-03-19 15:14:36,483 p=10828 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/pull_nfs_mounts.yml': line 45, column 6, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      when: ansible_os_family == "RedHat"
+     - name: Combine all output into one clean block
+     ^ here
+
+2026-03-19 15:16:05,413 p=10833 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************************************************************************************
+2026-03-19 15:16:05,421 p=10833 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************
+2026-03-19 15:16:07,222 p=10833 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:16:07,229 p=10833 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************************************************************************************
+2026-03-19 15:16:07,802 p=10833 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:16:07,807 p=10833 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-19 15:16:07,857 p=10833 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== DISK USAGE (df -h) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev",
+            "tmpfs          tmpfs     344M     0  344M   0% /dev/shm",
+            "tmpfs          tmpfs     138M  3.5M  134M   3% /run",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /",
+            "/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot",
+            "/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi",
+            "tmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-19 15:16:07,891 p=10833 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************************************************************************************
+2026-03-19 15:16:09,317 p=10833 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:16:09,322 p=10833 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-19 15:16:09,339 p=10833 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-19 15:16:09,344 p=10833 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************************************************************************************
+2026-03-19 15:16:09,756 p=10833 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | egrep -i \"nfs|cifs\"", "delta": "0:00:00.006679", "end": "2026-03-19 09:46:09.700202", "msg": "non-zero return code", "rc": 1, "start": "2026-03-19 09:46:09.693523", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-19 15:16:09,756 p=10833 u=ec2-user n=ansible | ...ignoring
+2026-03-19 15:16:09,761 p=10833 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-19 15:16:09,792 p=10833 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-19 15:16:09,798 p=10833 u=ec2-user n=ansible | TASK [Combine all output into one clean block] *********************************************************************************************************
+2026-03-19 15:16:09,816 p=10833 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:16:09,820 p=10833 u=ec2-user n=ansible | TASK [FINAL CLEAN OUTPUT] ******************************************************************************************************************************
+2026-03-19 15:16:09,838 p=10833 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": "===== rhel_target =====\n\n--- DISK USAGE (df -HT) ---\nFilesystem     Type      Size  Used Avail Use% Mounted on\ndevtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev\ntmpfs          tmpfs     344M     0  344M   0% /dev/shm\ntmpfs          tmpfs     138M  3.5M  134M   3% /run\nefivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars\n/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /\n/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot\n/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi\ntmpfs          tmpfs      69M     0   69M   0% /run/user/1000\n\n--- /etc/fstab CONTENT ---\nUUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0\nUUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0\nUUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2\n\n--- ACTIVE NFS/CIFS MOUNTS ---\n"
+}
+2026-03-19 15:16:09,839 p=10833 u=ec2-user n=ansible | PLAY RECAP *********************************************************************************************************************************************
+2026-03-19 15:16:09,839 p=10833 u=ec2-user n=ansible | rhel_target                : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-03-19 15:20:42,198 p=10919 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************
+2026-03-19 15:20:42,224 p=10919 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-03-19 15:20:43,876 p=10919 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:20:43,883 p=10919 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************
+2026-03-19 15:20:44,449 p=10919 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:20:44,454 p=10919 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:20:44,502 p=10919 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== DISK USAGE (df -h) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev",
+            "tmpfs          tmpfs     344M     0  344M   0% /dev/shm",
+            "tmpfs          tmpfs     138M  3.5M  134M   3% /run",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /",
+            "/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot",
+            "/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi",
+            "tmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-19 15:20:44,535 p=10919 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************
+2026-03-19 15:20:45,935 p=10919 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:20:45,940 p=10919 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:20:45,957 p=10919 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-19 15:20:45,962 p=10919 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************
+2026-03-19 15:20:46,373 p=10919 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | egrep -i \"nfs|cifs\"", "delta": "0:00:00.006436", "end": "2026-03-19 09:50:46.320131", "msg": "non-zero return code", "rc": 1, "start": "2026-03-19 09:50:46.313695", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-19 15:20:46,374 p=10919 u=ec2-user n=ansible | ...ignoring
+2026-03-19 15:20:46,379 p=10919 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:20:46,411 p=10919 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-19 15:20:46,418 p=10919 u=ec2-user n=ansible | TASK [Combine all output into one clean block] *********************************
+2026-03-19 15:20:46,437 p=10919 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:20:46,441 p=10919 u=ec2-user n=ansible | TASK [FINAL CLEAN OUTPUT] ******************************************************
+2026-03-19 15:20:46,459 p=10919 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": "===== rhel_target =====\n\n--- DISK USAGE (df -HT) ---\nFilesystem     Type      Size  Used Avail Use% Mounted on\ndevtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev\ntmpfs          tmpfs     344M     0  344M   0% /dev/shm\ntmpfs          tmpfs     138M  3.5M  134M   3% /run\nefivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars\n/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /\n/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot\n/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi\ntmpfs          tmpfs      69M     0   69M   0% /run/user/1000\n\n--- /etc/fstab CONTENT ---\nUUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0\nUUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0\nUUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2\n\n--- ACTIVE NFS/CIFS MOUNTS ---\n"
+}
+2026-03-19 15:20:46,461 p=10919 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-03-19 15:20:46,461 p=10919 u=ec2-user n=ansible | rhel_target                : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-03-19 15:21:15,231 p=10965 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************************************************************************************
+2026-03-19 15:21:15,238 p=10965 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************
+2026-03-19 15:21:16,505 p=10965 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:21:16,511 p=10965 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************************************************************************************
+2026-03-19 15:21:17,064 p=10965 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:21:17,069 p=10965 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-19 15:21:17,115 p=10965 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== DISK USAGE (df -h) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev",
+            "tmpfs          tmpfs     344M     0  344M   0% /dev/shm",
+            "tmpfs          tmpfs     138M  3.5M  134M   3% /run",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /",
+            "/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot",
+            "/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi",
+            "tmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-19 15:21:17,149 p=10965 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************************************************************************************
+2026-03-19 15:21:17,548 p=10965 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:21:17,552 p=10965 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-19 15:21:17,568 p=10965 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-19 15:21:17,573 p=10965 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************************************************************************************
+2026-03-19 15:21:17,976 p=10965 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | egrep -i \"nfs|cifs\"", "delta": "0:00:00.006788", "end": "2026-03-19 09:51:17.921384", "msg": "non-zero return code", "rc": 1, "start": "2026-03-19 09:51:17.914596", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-19 15:21:17,976 p=10965 u=ec2-user n=ansible | ...ignoring
+2026-03-19 15:21:17,981 p=10965 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-19 15:21:18,012 p=10965 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-19 15:21:18,018 p=10965 u=ec2-user n=ansible | TASK [Combine all output into one clean block] *********************************************************************************************************
+2026-03-19 15:21:18,036 p=10965 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:21:18,040 p=10965 u=ec2-user n=ansible | TASK [FINAL CLEAN OUTPUT] ******************************************************************************************************************************
+2026-03-19 15:21:18,058 p=10965 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": "===== rhel_target =====\n\n--- DISK USAGE (df -HT) ---\nFilesystem     Type      Size  Used Avail Use% Mounted on\ndevtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev\ntmpfs          tmpfs     344M     0  344M   0% /dev/shm\ntmpfs          tmpfs     138M  3.5M  134M   3% /run\nefivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars\n/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /\n/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot\n/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi\ntmpfs          tmpfs      69M     0   69M   0% /run/user/1000\n\n--- /etc/fstab CONTENT ---\nUUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0\nUUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0\nUUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2\n\n--- ACTIVE NFS/CIFS MOUNTS ---\n"
+}
+2026-03-19 15:21:18,059 p=10965 u=ec2-user n=ansible | PLAY RECAP *********************************************************************************************************************************************
+2026-03-19 15:21:18,059 p=10965 u=ec2-user n=ansible | rhel_target                : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-03-19 15:22:46,327 p=11011 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************
+2026-03-19 15:22:46,334 p=11011 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-03-19 15:22:47,967 p=11011 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:22:47,976 p=11011 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************
+2026-03-19 15:22:48,541 p=11011 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:22:48,546 p=11011 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:22:48,596 p=11011 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== DISK USAGE (df -h) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev",
+            "tmpfs          tmpfs     344M     0  344M   0% /dev/shm",
+            "tmpfs          tmpfs     138M  3.5M  134M   3% /run",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /",
+            "/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot",
+            "/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi",
+            "tmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-19 15:22:48,633 p=11011 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************
+2026-03-19 15:22:49,038 p=11011 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:22:49,042 p=11011 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:22:49,061 p=11011 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-19 15:22:49,065 p=11011 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************
+2026-03-19 15:22:49,469 p=11011 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | egrep -i \"nfs|cifs\"", "delta": "0:00:00.006526", "end": "2026-03-19 09:52:49.416296", "msg": "non-zero return code", "rc": 1, "start": "2026-03-19 09:52:49.409770", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-19 15:22:49,470 p=11011 u=ec2-user n=ansible | ...ignoring
+2026-03-19 15:22:49,474 p=11011 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:22:49,503 p=11011 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-19 15:22:49,505 p=11011 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-03-19 15:22:49,505 p=11011 u=ec2-user n=ansible | rhel_target                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-03-19 15:22:59,671 p=11055 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************************************************************************************
+2026-03-19 15:22:59,678 p=11055 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************
+2026-03-19 15:23:01,003 p=11055 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:23:01,011 p=11055 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************************************************************************************
+2026-03-19 15:23:01,598 p=11055 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:23:01,606 p=11055 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-19 15:23:01,658 p=11055 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== DISK USAGE (df -h) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev",
+            "tmpfs          tmpfs     344M     0  344M   0% /dev/shm",
+            "tmpfs          tmpfs     138M  3.5M  134M   3% /run",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /",
+            "/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot",
+            "/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi",
+            "tmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-19 15:23:01,693 p=11055 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************************************************************************************
+2026-03-19 15:23:02,111 p=11055 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:23:02,116 p=11055 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-19 15:23:02,134 p=11055 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-19 15:23:02,141 p=11055 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************************************************************************************
+2026-03-19 15:23:02,554 p=11055 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | egrep -i \"nfs|cifs\"", "delta": "0:00:00.006533", "end": "2026-03-19 09:53:02.499955", "msg": "non-zero return code", "rc": 1, "start": "2026-03-19 09:53:02.493422", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-19 15:23:02,554 p=11055 u=ec2-user n=ansible | ...ignoring
+2026-03-19 15:23:02,559 p=11055 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-19 15:23:02,589 p=11055 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-19 15:23:02,590 p=11055 u=ec2-user n=ansible | PLAY RECAP *********************************************************************************************************************************************
+2026-03-19 15:23:02,591 p=11055 u=ec2-user n=ansible | rhel_target                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-03-19 15:23:44,638 p=11121 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************
+2026-03-19 15:23:44,647 p=11121 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-03-19 15:23:45,958 p=11121 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:23:45,965 p=11121 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************
+2026-03-19 15:23:46,526 p=11121 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:23:46,530 p=11121 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:23:46,578 p=11121 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== DISK USAGE (df -h) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev",
+            "tmpfs          tmpfs     344M     0  344M   0% /dev/shm",
+            "tmpfs          tmpfs     138M  3.5M  134M   3% /run",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /",
+            "/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot",
+            "/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi",
+            "tmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-19 15:23:46,610 p=11121 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************
+2026-03-19 15:23:47,012 p=11121 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:23:47,017 p=11121 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:23:47,034 p=11121 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-19 15:23:47,039 p=11121 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************
+2026-03-19 15:23:47,448 p=11121 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | egrep -i \"nfs|cifs\"", "delta": "0:00:00.006889", "end": "2026-03-19 09:53:47.392267", "msg": "non-zero return code", "rc": 1, "start": "2026-03-19 09:53:47.385378", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-19 15:23:47,448 p=11121 u=ec2-user n=ansible | ...ignoring
+2026-03-19 15:23:47,455 p=11121 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:23:47,485 p=11121 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-19 15:23:47,486 p=11121 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-03-19 15:23:47,487 p=11121 u=ec2-user n=ansible | rhel_target                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-03-19 15:25:30,248 p=11169 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************
+2026-03-19 15:25:30,256 p=11169 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-03-19 15:25:31,910 p=11169 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:25:31,916 p=11169 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************
+2026-03-19 15:25:32,493 p=11169 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:25:32,498 p=11169 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:25:32,546 p=11169 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== DISK USAGE (df -HT) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev",
+            "tmpfs          tmpfs     344M     0  344M   0% /dev/shm",
+            "tmpfs          tmpfs     138M  3.5M  134M   3% /run",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /",
+            "/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot",
+            "/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi",
+            "tmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-19 15:25:32,584 p=11169 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************
+2026-03-19 15:25:33,983 p=11169 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:25:33,988 p=11169 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:25:34,007 p=11169 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-19 15:25:34,014 p=11169 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************
+2026-03-19 15:25:34,424 p=11169 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | egrep -i \"nfs|cifs\"", "delta": "0:00:00.007063", "end": "2026-03-19 09:55:34.369762", "msg": "non-zero return code", "rc": 1, "start": "2026-03-19 09:55:34.362699", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-19 15:25:34,424 p=11169 u=ec2-user n=ansible | ...ignoring
+2026-03-19 15:25:34,429 p=11169 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:25:34,458 p=11169 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-19 15:25:34,459 p=11169 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-03-19 15:25:34,459 p=11169 u=ec2-user n=ansible | rhel_target                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-03-19 15:31:10,673 p=11251 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************
+2026-03-19 15:31:10,681 p=11251 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-03-19 15:31:12,535 p=11251 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:31:12,542 p=11251 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************
+2026-03-19 15:31:13,117 p=11251 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:31:13,121 p=11251 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:31:13,171 p=11251 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : DISK USAGE (df -HT) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev",
+            "tmpfs          tmpfs     344M     0  344M   0% /dev/shm",
+            "tmpfs          tmpfs     138M  3.5M  134M   3% /run",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /",
+            "/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot",
+            "/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi",
+            "tmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-19 15:31:13,205 p=11251 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************
+2026-03-19 15:31:14,619 p=11251 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-19 15:31:14,624 p=11251 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:31:14,643 p=11251 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-19 15:31:14,647 p=11251 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************
+2026-03-19 15:31:15,063 p=11251 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | egrep -i \"nfs|cifs\"", "delta": "0:00:00.006812", "end": "2026-03-19 10:01:15.000630", "msg": "non-zero return code", "rc": 1, "start": "2026-03-19 10:01:14.993818", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-19 15:31:15,064 p=11251 u=ec2-user n=ansible | ...ignoring
+2026-03-19 15:31:15,068 p=11251 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 15:31:15,101 p=11251 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-19 15:31:15,103 p=11251 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-03-19 15:31:15,103 p=11251 u=ec2-user n=ansible | rhel_target                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-03-19 16:00:23,144 p=11733 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************
+2026-03-19 16:00:23,151 p=11733 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2026-03-19 16:00:24,744 p=11733 u=ec2-user n=ansible | ok: [localhost]
+2026-03-19 16:00:24,750 p=11733 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************
+2026-03-19 16:00:25,171 p=11733 u=ec2-user n=ansible | ok: [localhost]
+2026-03-19 16:00:25,178 p=11733 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 16:00:25,197 p=11733 u=ec2-user n=ansible | ok: [localhost] => {
+    "msg": [
+        "===== localhost : DISK USAGE (df -HT) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "/dev/nvme0n1p2 xfs        27G   17G  9.9G  63% /",
+            "devtmpfs       devtmpfs  795M     0  795M   0% /dev",
+            "tmpfs          tmpfs     830M  246k  830M   1% /dev/shm",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "tmpfs          tmpfs     332M  9.2M  323M   3% /run",
+            "tmpfs          tmpfs     1.1M     0  1.1M   0% /run/credentials/systemd-journald.service",
+            "/dev/nvme0n1p1 vfat      210M  9.4M  201M   5% /boot/efi",
+            "overlay        overlay    27G   17G  9.9G  63% /var/lib/docker/rootfs/overlayfs/93522141c5b67f520158bf2801f0b7f2414295bbfdac352125d62d61cdb329e1",
+            "overlay        overlay    27G   17G  9.9G  63% /var/lib/docker/rootfs/overlayfs/3fef2451b442b129231601540a8de34e7d73d4ce5cb5445b57ed8ad54d45adc0",
+            "overlay        overlay    27G   17G  9.9G  63% /var/lib/docker/rootfs/overlayfs/d0bb8397c5c0e472a74c6f22ba41b4fdd9b10488bc469ae5207c6dd0a572a727",
+            "tmpfs          tmpfs     1.1M     0  1.1M   0% /run/credentials/serial-getty@ttyS0.service",
+            "tmpfs          tmpfs     1.1M     0  1.1M   0% /run/credentials/getty@tty1.service",
+            "tmpfs          tmpfs     166M  4.1k  166M   1% /run/user/0"
+        ]
+    ]
+}
+2026-03-19 16:00:25,203 p=11733 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************
+2026-03-19 16:00:25,477 p=11733 u=ec2-user n=ansible | ok: [localhost]
+2026-03-19 16:00:25,483 p=11733 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 16:00:25,501 p=11733 u=ec2-user n=ansible | ok: [localhost] => {
+    "msg": [
+        "===== localhost : /etc/fstab CONTENT =====",
+        [
+            "UUID=ea45f44b-1c08-4c92-af1e-2eb3e359b170\t/\txfs\tdefaults\t0\t0",
+            "UUID=AB15-4282\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2",
+            "UUID=3a411d89-2fed-4d51-a925-210dc67b7915 /newvolume xfs defaults,nofail 0 0",
+            "/swapfile none swap sw 0 0"
+        ]
+    ]
+}
+2026-03-19 16:00:25,508 p=11733 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************
+2026-03-19 16:00:25,785 p=11733 u=ec2-user n=ansible | ok: [localhost]
+2026-03-19 16:00:25,791 p=11733 u=ec2-user n=ansible | TASK [debug] *******************************************************************
+2026-03-19 16:00:25,824 p=11733 u=ec2-user n=ansible | ok: [localhost] => {
+    "msg": [
+        "===== localhost : ACTIVE NFS MOUNTS =====",
+        [
+            "rpc_pipefs on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime)"
+        ]
+    ]
+}
+2026-03-19 16:00:25,825 p=11733 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2026-03-19 16:00:25,825 p=11733 u=ec2-user n=ansible | localhost                  : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-03-20 14:12:46,764 p=23908 u=ec2-user n=ansible | ERROR! the playbook: pull_nfs_mount.yml could not be found
+2026-03-20 14:12:55,255 p=23910 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/pull_nfs_mounts.yml': line 47, column 17, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - name: Build final clean report content
+        set_fact:
+                ^ here
+
+2026-03-20 14:14:25,070 p=23920 u=ec2-user n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/ec2-user/scripts/ansible_sc/pull_nfs_mounts.yml': line 61, column 13, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - name: Write report to file
+        copy:
+            ^ here
+
+2026-03-20 14:14:57,506 p=23925 u=ec2-user n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ec2-instance
+
+2026-03-20 14:14:57,507 p=23925 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************************************************************************************
+2026-03-20 14:14:57,507 p=23925 u=ec2-user n=ansible | skipping: no hosts matched
+2026-03-20 14:14:57,507 p=23925 u=ec2-user n=ansible | PLAY RECAP *********************************************************************************************************************************************
+2026-03-20 14:15:20,072 p=23929 u=ec2-user n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ec2-instance
+
+2026-03-20 14:15:20,073 p=23929 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************************************************************************************
+2026-03-20 14:15:20,073 p=23929 u=ec2-user n=ansible | skipping: no hosts matched
+2026-03-20 14:15:20,073 p=23929 u=ec2-user n=ansible | PLAY RECAP *********************************************************************************************************************************************
+2026-03-20 14:15:58,730 p=23945 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************************************************************************************
+2026-03-20 14:15:58,744 p=23945 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************
+2026-03-20 14:16:00,952 p=23945 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:16:00,959 p=23945 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************************************************************************************
+2026-03-20 14:16:01,551 p=23945 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:16:01,557 p=23945 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-20 14:16:01,608 p=23945 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : DISK USAGE (df -HT) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev",
+            "tmpfs          tmpfs     344M     0  344M   0% /dev/shm",
+            "tmpfs          tmpfs     138M  5.0M  133M   4% /run",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /",
+            "/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot",
+            "/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi",
+            "tmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-20 14:16:01,643 p=23945 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************************************************************************************
+2026-03-20 14:16:02,074 p=23945 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:16:02,079 p=23945 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-20 14:16:02,100 p=23945 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-20 14:16:02,106 p=23945 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************************************************************************************
+2026-03-20 14:16:02,532 p=23945 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | egrep -i \"nfs|cifs\"", "delta": "0:00:00.008689", "end": "2026-03-20 08:46:02.472825", "msg": "non-zero return code", "rc": 1, "start": "2026-03-20 08:46:02.464136", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-20 14:16:02,532 p=23945 u=ec2-user n=ansible | ...ignoring
+2026-03-20 14:16:02,537 p=23945 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-20 14:16:02,574 p=23945 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-20 14:16:02,580 p=23945 u=ec2-user n=ansible | TASK [Build final clean report content] ****************************************************************************************************************
+2026-03-20 14:16:02,595 p=23945 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:16:02,601 p=23945 u=ec2-user n=ansible | TASK [Write report to file] ****************************************************************************************************************************
+2026-03-20 14:16:03,622 p=23945 u=ec2-user n=ansible | changed: [rhel_target]
+2026-03-20 14:16:03,624 p=23945 u=ec2-user n=ansible | PLAY RECAP *********************************************************************************************************************************************
+2026-03-20 14:16:03,624 p=23945 u=ec2-user n=ansible | rhel_target                : ok=9    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-03-20 14:24:52,039 p=24083 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************************************************************************************
+2026-03-20 14:24:52,048 p=24083 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************
+2026-03-20 14:24:54,858 p=24083 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:24:54,865 p=24083 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************************************************************************************
+2026-03-20 14:24:55,441 p=24083 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:24:55,446 p=24083 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-20 14:24:55,494 p=24083 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : DISK USAGE (df -HT) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev",
+            "tmpfs          tmpfs     344M     0  344M   0% /dev/shm",
+            "tmpfs          tmpfs     138M  5.0M  133M   4% /run",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /",
+            "/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot",
+            "/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi",
+            "tmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-20 14:24:55,526 p=24083 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************************************************************************************
+2026-03-20 14:24:55,927 p=24083 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:24:55,932 p=24083 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-20 14:24:55,949 p=24083 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-20 14:24:55,954 p=24083 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************************************************************************************
+2026-03-20 14:24:56,379 p=24083 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | egrep -i \"nfs|cifs\"", "delta": "0:00:00.006943", "end": "2026-03-20 08:54:56.324029", "msg": "non-zero return code", "rc": 1, "start": "2026-03-20 08:54:56.317086", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-20 14:24:56,379 p=24083 u=ec2-user n=ansible | ...ignoring
+2026-03-20 14:24:56,384 p=24083 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-20 14:24:56,414 p=24083 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-20 14:24:56,419 p=24083 u=ec2-user n=ansible | TASK [Build final clean report content] ****************************************************************************************************************
+2026-03-20 14:24:56,434 p=24083 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:24:56,439 p=24083 u=ec2-user n=ansible | TASK [Write report to LOCAL controller machine] ********************************************************************************************************
+2026-03-20 14:24:57,187 p=24083 u=ec2-user n=ansible | fatal: [rhel_target -> localhost]: FAILED! => {"changed": false, "checksum": "6c1106f25e819cf92c0fe847614a00abb1142f14", "msg": "Destination directory /root/reports does not exist"}
+2026-03-20 14:24:57,188 p=24083 u=ec2-user n=ansible | PLAY RECAP *********************************************************************************************************************************************
+2026-03-20 14:24:57,188 p=24083 u=ec2-user n=ansible | rhel_target                : ok=8    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2026-03-20 14:25:59,154 p=24174 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************************************************************************************
+2026-03-20 14:25:59,161 p=24174 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************
+2026-03-20 14:26:00,662 p=24174 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:26:00,669 p=24174 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************************************************************************************
+2026-03-20 14:26:01,248 p=24174 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:26:01,253 p=24174 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-20 14:26:01,309 p=24174 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : DISK USAGE (df -HT) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev",
+            "tmpfs          tmpfs     344M     0  344M   0% /dev/shm",
+            "tmpfs          tmpfs     138M  5.0M  133M   4% /run",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /",
+            "/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot",
+            "/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi",
+            "tmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-20 14:26:01,346 p=24174 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************************************************************************************
+2026-03-20 14:26:01,762 p=24174 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:26:01,767 p=24174 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-20 14:26:01,787 p=24174 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-20 14:26:01,792 p=24174 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************************************************************************************
+2026-03-20 14:26:02,212 p=24174 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | egrep -i \"nfs|cifs\"", "delta": "0:00:00.007337", "end": "2026-03-20 08:56:02.153465", "msg": "non-zero return code", "rc": 1, "start": "2026-03-20 08:56:02.146128", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-20 14:26:02,213 p=24174 u=ec2-user n=ansible | ...ignoring
+2026-03-20 14:26:02,217 p=24174 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-20 14:26:02,247 p=24174 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-20 14:26:02,252 p=24174 u=ec2-user n=ansible | TASK [Build final clean report content] ****************************************************************************************************************
+2026-03-20 14:26:02,268 p=24174 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:26:02,273 p=24174 u=ec2-user n=ansible | TASK [Write report to LOCAL controller machine] ********************************************************************************************************
+2026-03-20 14:26:03,039 p=24174 u=ec2-user n=ansible | fatal: [rhel_target -> localhost]: FAILED! => {"changed": false, "checksum": "6c1106f25e819cf92c0fe847614a00abb1142f14", "msg": "Destination directory /root/reports does not exist"}
+2026-03-20 14:26:03,040 p=24174 u=ec2-user n=ansible | PLAY RECAP *********************************************************************************************************************************************
+2026-03-20 14:26:03,041 p=24174 u=ec2-user n=ansible | rhel_target                : ok=8    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2026-03-20 14:27:57,698 p=24251 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************************************************************************************
+2026-03-20 14:27:57,706 p=24251 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************
+2026-03-20 14:28:00,362 p=24251 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:28:00,369 p=24251 u=ec2-user n=ansible | TASK [Run df -h on RHEL] *******************************************************************************************************************************
+2026-03-20 14:28:00,937 p=24251 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:28:00,942 p=24251 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-20 14:28:00,990 p=24251 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : DISK USAGE (df -HT) =====",
+        [
+            "Filesystem     Type      Size  Used Avail Use% Mounted on",
+            "devtmpfs       devtmpfs  4.2M     0  4.2M   0% /dev",
+            "tmpfs          tmpfs     344M     0  344M   0% /dev/shm",
+            "tmpfs          tmpfs     138M  5.0M  133M   4% /run",
+            "efivarfs       efivarfs  132k  3.4k  128k   3% /sys/firmware/efi/efivars",
+            "/dev/nvme0n1p3 xfs       9.4G  2.4G  7.0G  26% /",
+            "/dev/nvme0n1p2 xfs       1.1G  289M  719M  29% /boot",
+            "/dev/nvme0n1p1 vfat      210M  7.7M  202M   4% /boot/efi",
+            "tmpfs          tmpfs      69M     0   69M   0% /run/user/1000"
+        ]
+    ]
+}
+2026-03-20 14:28:01,025 p=24251 u=ec2-user n=ansible | TASK [Show /etc/fstab on RHEL] *************************************************************************************************************************
+2026-03-20 14:28:01,457 p=24251 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:28:01,463 p=24251 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-20 14:28:01,483 p=24251 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : /etc/fstab CONTENT =====",
+        [
+            "UUID=3cb71c94-5a97-4499-9c55-c02dd709530f\t/\txfs\tdefaults\t0\t0",
+            "UUID=6a9dc189-0b08-4417-ba09-b9d2d7847dcb\t/boot\txfs\tdefaults\t0\t0",
+            "UUID=FB6C-ED3F\t/boot/efi\tvfat\tdefaults,uid=0,gid=0,umask=077,shortname=winnt\t0\t2"
+        ]
+    ]
+}
+2026-03-20 14:28:01,488 p=24251 u=ec2-user n=ansible | TASK [Show active NFS mounts on RHEL] ******************************************************************************************************************
+2026-03-20 14:28:01,912 p=24251 u=ec2-user n=ansible | fatal: [rhel_target]: FAILED! => {"changed": false, "cmd": "mount | egrep -i \"nfs|cifs\"", "delta": "0:00:00.008357", "end": "2026-03-20 08:58:01.854476", "msg": "non-zero return code", "rc": 1, "start": "2026-03-20 08:58:01.846119", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-03-20 14:28:01,912 p=24251 u=ec2-user n=ansible | ...ignoring
+2026-03-20 14:28:01,917 p=24251 u=ec2-user n=ansible | TASK [debug] *******************************************************************************************************************************************
+2026-03-20 14:28:01,949 p=24251 u=ec2-user n=ansible | ok: [rhel_target] => {
+    "msg": [
+        "===== rhel_target : ACTIVE NFS MOUNTS =====",
+        []
+    ]
+}
+2026-03-20 14:28:01,955 p=24251 u=ec2-user n=ansible | TASK [Build final clean report content] ****************************************************************************************************************
+2026-03-20 14:28:01,972 p=24251 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 14:28:01,977 p=24251 u=ec2-user n=ansible | TASK [Write report to LOCAL controller machine] ********************************************************************************************************
+2026-03-20 14:28:02,769 p=24251 u=ec2-user n=ansible | changed: [rhel_target -> localhost]
+2026-03-20 14:28:02,770 p=24251 u=ec2-user n=ansible | PLAY RECAP *********************************************************************************************************************************************
+2026-03-20 14:28:02,771 p=24251 u=ec2-user n=ansible | rhel_target                : ok=9    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2026-03-20 18:24:56,526 p=25936 u=ec2-user n=ansible | PLAY [Validate df, fstab, and NFS mounts on RHEL systems] **********************************************************************************************
+2026-03-20 18:24:56,534 p=25936 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************
+2026-03-20 18:24:58,396 p=25936 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 18:24:58,428 p=25936 u=ec2-user n=ansible | TASK [Ensure report directory exists on controller] ****************************************************************************************************
+2026-03-20 18:24:58,839 p=25936 u=ec2-user n=ansible | ok: [rhel_target -> localhost]
+2026-03-20 18:24:58,844 p=25936 u=ec2-user n=ansible | TASK [Run df -HT] **************************************************************************************************************************************
+2026-03-20 18:24:59,367 p=25936 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 18:24:59,372 p=25936 u=ec2-user n=ansible | TASK [Read /etc/fstab] *********************************************************************************************************************************
+2026-03-20 18:24:59,780 p=25936 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 18:24:59,786 p=25936 u=ec2-user n=ansible | TASK [Check active NFS/CIFS mounts] ********************************************************************************************************************
+2026-03-20 18:25:00,240 p=25936 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 18:25:00,247 p=25936 u=ec2-user n=ansible | TASK [Build failure reason if any] *********************************************************************************************************************
+2026-03-20 18:25:00,303 p=25936 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 18:25:00,309 p=25936 u=ec2-user n=ansible | TASK [Register failed hosts in file (LOCAL)] ***********************************************************************************************************
+2026-03-20 18:25:00,340 p=25936 u=ec2-user n=ansible | skipping: [rhel_target]
+2026-03-20 18:25:00,345 p=25936 u=ec2-user n=ansible | TASK [Build final clean report content] ****************************************************************************************************************
+2026-03-20 18:25:00,366 p=25936 u=ec2-user n=ansible | ok: [rhel_target]
+2026-03-20 18:25:00,372 p=25936 u=ec2-user n=ansible | TASK [Write per-server report locally] *****************************************************************************************************************
+2026-03-20 18:25:01,215 p=25936 u=ec2-user n=ansible | changed: [rhel_target -> localhost]
+2026-03-20 18:25:01,217 p=25936 u=ec2-user n=ansible | PLAY RECAP *********************************************************************************************************************************************
+2026-03-20 18:25:01,217 p=25936 u=ec2-user n=ansible | rhel_target                : ok=8    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   

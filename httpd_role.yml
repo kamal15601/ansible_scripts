@@ -1,10 +1,10 @@
 #using httpd role to setup httpd in remote server
 ---
 - name: using httpd role
-  hosts: redhat_containers
+  hosts: ec2_instance
   become: true
   roles:
     - httpd
-    
+
 
   

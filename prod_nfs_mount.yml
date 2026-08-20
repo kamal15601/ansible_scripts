@@ -1,0 +1,101 @@
+---
+- name: Validate df, fstab, and NFS mounts on RHEL systems
+  hosts: ec2_instance
+  become: yes
+  gather_facts: yes
+
+  vars:
+    report_dir: "/home/ec2-user/scripts/ansible_sc/reports"
+    failed_hosts_file: "{{ report_dir }}/failed_hosts.txt"
+
+  tasks:
+
+    - name: Ensure report directory exists on controller
+      delegate_to: localhost
+      file:
+        path: "{{ report_dir }}"
+        state: directory
+        mode: '0755'
+
+    #######################################################################
+    # 1. RUN COMMANDS WITH ERROR HANDLING
+    #######################################################################
+
+    - name: Run df -HT
+      command: df -HT
+      register: df_out
+      failed_when: false
+      changed_when: false
+
+    - name: Read /etc/fstab
+      command: cat /etc/fstab
+      register: fstab_out
+      failed_when: false
+      changed_when: false
+
+    - name: Check active NFS/CIFS mounts
+      shell: mount | egrep -i "nfs|cifs" || echo "No NFS/CIFS mounts found"
+      register: nfs_out
+      failed_when: false
+      changed_when: false
+
+    #######################################################################
+    # 2. CAPTURE FAILURE REASONS
+    #######################################################################
+
+    - name: Build failure reason if any
+      set_fact:
+        fail_reason: >-
+          {{
+            (df_out.rc != 0) | ternary('df failed: ' ~ df_out.stderr, '') +
+            (fstab_out.rc != 0) | ternary(' fstab failed: ' ~ fstab_out.stderr, '') +
+            (nfs_out.rc != 0) | ternary(' nfs check failed: ' ~ nfs_out.stderr, '')
+          }}
+
+    - name: Register failed hosts in file (LOCAL)
+      delegate_to: localhost
+      lineinfile:
+        path: "{{ failed_hosts_file }}"
+        line: "{{ inventory_hostname }} => {{ fail_reason | default('Unknown error') }}"
+        create: yes
+      when: fail_reason | trim != ""
+
+    #######################################################################
+    # 3. BUILD CLEAN HUMAN-FRIENDLY FINAL OUTPUT
+    #######################################################################
+
+    - name: Build final clean report content
+      set_fact:
+        final_report: |
+          ===== {{ inventory_hostname }} =====
+
+          --- DISK USAGE (df -HT) ---
+          {% if df_out.rc == 0 %}
+          {{ df_out.stdout }}
+          {% else %}
+          ERROR: df -HT failed → {{ df_out.stderr }}
+          {% endif %}
+
+          --- /etc/fstab CONTENT ---
+          {% if fstab_out.rc == 0 %}
+          {{ fstab_out.stdout }}
+          {% else %}
+          ERROR: Cannot read /etc/fstab → {{ fstab_out.stderr }}
+          {% endif %}
+
+          --- ACTIVE NFS/CIFS MOUNTS ---
+          {% if nfs_out.rc == 0 %}
+          {{ nfs_out.stdout }}
+          {% else %}
+          ERROR: NFS check failed → {{ nfs_out.stderr }}
+          {% endif %}
+
+    #######################################################################
+    # 4. WRITE FINAL REPORT TO LOCAL CONTROLLER
+    #######################################################################
+
+    - name: Write per-server report locally
+      delegate_to: localhost
+      copy:
+        content: "{{ final_report }}"
+        dest: "{{ report_dir }}/{{ inventory_hostname }}_report.txt"
