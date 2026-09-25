@@ -1,0 +1,10 @@
+- name: install packages in RHEL
+  hosts: [ec2_instance]
+  become: true
+  gather_facts: true
+  tasks:
+    - name: install git
+      ansible.builtin.dnf: 
+        name: git
+        state: present
+        update_cache: true

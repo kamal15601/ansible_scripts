@@ -1,0 +1,47 @@
+---
+services:
+  splunk:
+    type: vendor
+    start_cmd: "/opt/splunkforwarder/bin/splunk start"
+    stop_cmd: "/opt/splunkforwarder/bin/splunk stop"
+    status_cmd: "/opt/splunkforwarder/bin/splunk status"
+  commvault:
+    type: vendor
+    start_cmd: "commvault start"
+    stop_cmd: "commvault stop"
+    status_cmd: "commvault status"
+
+  controlm:
+    type: vendor
+    start_cmd: "/opt/controlm/install/sa/ctmagent/ctm/scripts/start-ag"
+    stop_cmd: "/opt/controlm/install/sa/ctmagent/ctm/scripts/shut-ag"
+    status_cmd: "ag_diag_comm"
+
+  sentinelone:
+    type: vendor
+    start_cmd: "/opt/sentinelone/bin/sentinelctl control start"
+    stop_cmd: "/opt/sentinelone/bin/sentinelctl control stop"
+    status_cmd: "/opt/sentinelone/bin/sentinelctl control status"
+
+  centrify:
+    type: os_managed
+    unit: centrifydc
+    status_cmd: "adinfo"
+
+service_map:
+  '1': splunk
+  '2': commvault
+  '3': controlm
+  '4': centrify
+  '5': sentinelone
+
+action_map:
+  '1': start
+  '2': stop
+  '3': restart
+  '4': status
+
+action_state_map:
+  start: started
+  stop: stopped
+  restart: restarted

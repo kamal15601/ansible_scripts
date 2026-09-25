@@ -1,0 +1,86 @@
+---
+- name: managing_service
+  hosts: all
+  become: true
+  gather_facts: true
+  
+  vars_files:
+    - variables.yml
+  
+  vars_prompt:
+
+    - name: service_choice
+      prompt: |
+        Select Service
+        1. Splunk
+        2. Commvault
+        3. Control-M
+        4. Centrify
+        5. SentinelOne
+        Enter your choice:
+      private: no
+    - name: action_choice
+      prompt: |
+        Select Action
+        1. Start
+        2. Stop
+        3. Restart
+        4. Status
+        Enter your choice:
+      private: no
+  tasks:
+    - debug:
+        msg:
+          - "Service Choice: {{ service_choice }}"
+          - "Action Choice: {{ action_choice }}" 
+
+    - name: Map user input to service and action
+      ansible.builtin.set_fact:
+        service_name: "{{ service_map[service_choice] }}"
+        action: "{{ action_map[action_choice] }}"
+        svc: "{{ services[service_map[service_choice]] }}"
+    
+    - name: Show selection
+      ansible.builtin.debug:
+        msg: "Host={{ inventory_hostname }} Service={{ service_name }} Action={{ action }}"
+
+    # ---------- CENTRIFY (systemd) ----------
+
+    - name: Centrify - manage service
+      ansible.builtin.systemd_service:
+        name: "{{ svc.unit }}"
+        state: "{{ action_state_map[action] }}"
+        when:
+        - svc.type == 'os_managed'
+        - action != 'status'
+
+    # ---------- VENDOR SERVICES ----------
+
+    - name: Vendor - stop
+      ansible.builtin.command: "{{ svc.stop_cmd }}"
+      when:
+        - svc.type == 'vendor'
+        - action in ['stop', 'restart']
+
+    - name: Vendor - start
+      ansible.builtin.command: "{{ svc.start_cmd }}"
+      when:
+      - svc.type == 'vendor'
+      - action in ['start', 'restart']
+
+    # ---------- STATUS CHECK ----------
+
+    - name: Pause before status check
+      ansible.builtin.pause:
+        seconds: 10
+      when: action != 'status'
+
+    - name: Run status command
+      ansible.builtin.command: "{{ svc.status_cmd }}"
+      register: status_result
+      changed_when: false
+      failed_when: false
+
+    - name: Display status output
+      ansible.builtin.debug:
+        msg: "{{ status_result.stdout_lines }}"
